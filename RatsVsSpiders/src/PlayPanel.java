@@ -13,13 +13,12 @@ import javax.swing.JPanel;
  *
  * @author Suzanne
  */
-public class MainMenuPanel extends JPanel implements ActionListener {
+public class PlayPanel extends JPanel implements ActionListener {
     
+PlayPanel(){
     
-    MainMenuPanel(){
-        
-    }
-    public void actionPerformed(ActionEvent e){
+}
+public void actionPerformed(ActionEvent e){
 
 }
 }
