@@ -21,7 +21,7 @@ public class Frame extends JFrame{
         MainMenuPanel panel = new MainMenuPanel();
         getContentPane().add(panel);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize (900, 750);
+        setSize (500, 550);
         setVisible(true);    
     }
 }
