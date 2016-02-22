@@ -8,6 +8,7 @@
  *
  * @author Suzanne
  */
+//Rats.
 public class Rat {
     
 }
