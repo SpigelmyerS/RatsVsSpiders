@@ -18,7 +18,7 @@ public class Frame extends JFrame{
         
     
      super ("Test");
-        MainMenuPanel panel = new MainMenuPanel();
+        SpiderTest panel = new SpiderTest();
         getContentPane().add(panel);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize (500, 550);
