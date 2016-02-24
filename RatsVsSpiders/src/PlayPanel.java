@@ -16,7 +16,8 @@ import javax.swing.JPanel;
 public class PlayPanel extends JPanel implements ActionListener {
     
 PlayPanel(){
-    
+    setSize (500, 550);
+    setVisible(true);
 }
 public void actionPerformed(ActionEvent e){
 
