@@ -21,7 +21,7 @@ public class MainMenuFrame extends JFrame {
     private JLabel startLabel;
     private JLabel quitLabel;
     private JTextField RatsVSpidersField;
-
+    
     public MainMenuFrame() {
         this.createComponents();
         this.createPanel();
@@ -46,16 +46,14 @@ public class MainMenuFrame extends JFrame {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(action.equals("start")){
-                    
+                if (action.equals("start")) {
+                    PlayPanel Play = new PlayPanel();
+                   
                 }
-                if(action.equals("quit")){
-                System.exit(0);
+                if (action.equals("quit")) {
+                    System.exit(0);
+                }
             }
-            }
-
-           
-            
         }
         startButton = new JButton("Start");
         ActionListener startListener = new StartQuitListener("sale");
@@ -63,22 +61,21 @@ public class MainMenuFrame extends JFrame {
         quitButton = new JButton("Quit");
         ActionListener quitListener = new StartQuitListener("Quit");
         quitButton.addActionListener(quitListener);
-        
+
     }
 
     private void createTextField() {
-        final int FIELD_WIDTH = 9;
+        final int FIELD_WIDTH = 10;
         RatsVSpidersField = new JTextField(FIELD_WIDTH);
         RatsVSpidersField.setText("RATS VS SPIDERS!");
+        RatsVSpidersField.setEditable(false);
     }
 
     private void createPanel() {
         JPanel panel = new JPanel();
         panel.add(this.RatsVSpidersField);
         panel.add(this.startButton);
-        panel.add(this.startLabel);
         panel.add(this.quitButton);
-        panel.add(this.quitLabel);
         this.add(panel);
     }
 }
