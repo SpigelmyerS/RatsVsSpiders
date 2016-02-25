@@ -1,7 +1,5 @@
 
 import javax.swing.*;
-import static javax.swing.JFrame.EXIT_ON_CLOSE;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -22,6 +20,16 @@ public class Frame extends JFrame{
         getContentPane().add(panel);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize (500, 550);
-        setVisible(true);    
+        setVisible(true);   
+     
+     
+        JFrame f = new JFrame();
+        RatTest r = new RatTest() {};
+        f.add(r);
+        f.setVisible(true);
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.setSize(800,600);
+          
+        
     }
 }
