@@ -19,25 +19,41 @@ import javax.swing.ImageIcon;
  */
 public class Spider extends Rectangle {
     private Object spiders;
-    private final Dimension size; 
+    /*private final Dimension size; */
     private Color spiderColor;
-  
+    private int SpiderLocx;
+    private int SpiderLocy;
     private final ImageIcon image;
     private final int imageSize;
+    private Image ResizedImage;
     
     public Spider(int width, int height){
        /* image = new Image("Test");*/
-       spiderColor= Color.RED;
+      /* spiderColor= Color.RED;
         size = new Dimension(10, 10);
-       
+       */
        image = new ImageIcon("src/images/spiders.png");
+       ResizedImage = image.getImage().getScaledInstance(100, 100,Image.SCALE_DEFAULT);
+       
        imageSize =image.getIconWidth();
-       setBounds(0, 0, imageSize, imageSize);
+       setBounds(SpiderLocx, SpiderLocy, imageSize, imageSize);
+       
     }
      public void Draw(Graphics g) {
-     g.drawImage(image.getImage(), this.x, this.y, null);
-        g.setColor(spiderColor);
-        g.fillRect(this.x, this.y, this.x, this.y);
-        
+     
+     g.drawImage(ResizedImage, this.x, this.y, null);
+       
+       
+   
+       
      }       
+     public void SpiderMovement(){
+        
+          double Rn = Math.random();
+          int i = 1;
+        int random = (int)(Rn*1000);
+        SpiderLocx = random;
+        SpiderLocy = random;
+        
+     }
 }

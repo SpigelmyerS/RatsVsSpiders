@@ -19,7 +19,7 @@ public class main {
     public static void main(String args[]) {
         
         Frame f1 = new Frame();
-
+       /* MainMenuFrame f2 = new MainMenuFrame();*/
     }
     
 }

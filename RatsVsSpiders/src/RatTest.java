@@ -10,6 +10,7 @@ import javax.swing.*;
 import javax.swing.JFrame;
 import javax.swing.Timer;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 
 
 
@@ -26,24 +27,54 @@ import java.awt.event.KeyEvent;
 public abstract class RatTest extends JPanel implements ActionListener, KeyListener{
     Timer t = new Timer(5,this);
     double x=0, y=0, velx=0, vely;
+     public ArrayList<Spider> spiders;     
+     
+   
     
+  
+  
     public RatTest(){
-        t.start();
+        
+        spiders = new ArrayList();
         addKeyListener(this);
         setFocusable(true);
-        setFocusTraversalKeysEnabled(false);
+        setFocusTraversalKeysEnabled(false); 
+       
+        
+       
+       
+      
     }
-    
+   
+       
+       
     public void paintComponent(Graphics g){
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
         g2.fill(new Ellipse2D.Double(x, y, 40, 40));
+        
+       /* for (int i = 1; i< spiders.size(); i++)
+        {*/
+            
+        //}
+       
+         if (spiders.size()<3)
+        {
+            spiders.add(new Spider(10,10));
+        }
+         for(int i=0;i<spiders.size();i++)
+        spiders.get(i).Draw(g);
+   
+        
+        
     }
     
     public void actionPerformed(ActionEvent e){
         repaint();
         x += velx;
         y += vely;
+       
+        
     }
     
     public void up(){
@@ -67,7 +98,9 @@ public abstract class RatTest extends JPanel implements ActionListener, KeyListe
     }
     
     public void keyPressed(KeyEvent event){
+        t.start();
         int code = event.getKeyCode();
+        
         if (code == KeyEvent.VK_UP){
             up();
         }
@@ -83,5 +116,7 @@ public abstract class RatTest extends JPanel implements ActionListener, KeyListe
     }
     
     public void keyTyped(KeyEvent e){}
-    public void keyReleased(KeyEvent e){}
+    public void keyReleased(KeyEvent e){
+        repaint();
+        t.stop();}
 }

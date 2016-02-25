@@ -48,6 +48,7 @@ public class MainMenuFrame extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 if (action.equals("start")) {
                     PlayPanel Play = new PlayPanel();
+                    
                    
                 }
                 if (action.equals("quit")) {
