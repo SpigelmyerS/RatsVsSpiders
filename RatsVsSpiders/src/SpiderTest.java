@@ -16,7 +16,7 @@ import javax.swing.JPanel;
  * @author Suzanne
  */
 public class SpiderTest extends JPanel implements ActionListener {
- public Spider sp1;     
+    public Spider sp1;     
     public JButton button;
     
     SpiderTest(){
@@ -32,5 +32,5 @@ public class SpiderTest extends JPanel implements ActionListener {
     }
     public void actionPerformed(ActionEvent e){
  
-}
+    }
 }
