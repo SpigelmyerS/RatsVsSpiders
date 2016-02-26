@@ -29,7 +29,7 @@ public abstract class RatTest extends JPanel implements ActionListener, KeyListe
     double x=0, y=0, velx=0, vely;
      public ArrayList<Spider> spiders;     
      
-   
+   public Rat player;
     
   
   
@@ -40,7 +40,7 @@ public abstract class RatTest extends JPanel implements ActionListener, KeyListe
         setFocusable(true);
         setFocusTraversalKeysEnabled(false); 
        
-        
+        player = new Rat(20, 20);
        
        
       
@@ -50,31 +50,37 @@ public abstract class RatTest extends JPanel implements ActionListener, KeyListe
        
     public void paintComponent(Graphics g){
         super.paintComponent(g);
-        Graphics2D g2 = (Graphics2D) g;
-        g2.fill(new Ellipse2D.Double(x, y, 40, 40));
-        
-       /* for (int i = 1; i< spiders.size(); i++)
-        {*/
-            
-        //}
-       
+       /* Graphics2D g2 = (Graphics2D) g;
+        g2.fill(new Ellipse2D.Double(x, y, 40, 40));*/
+        player.DrawRat(g);
+      
          if (spiders.size()<3)
         {
             spiders.add(new Spider(10,10));
         }
-         for(int i=0;i<spiders.size();i++)
+         for(int i=0;i<spiders.size();i++){
         spiders.get(i).Draw(g);
-   
         
         
+         }
+      /* Possible Collison   for(Spider spider1: spiders){
+             for(Spider spider2 : spiders){
+                 if(spider1.intersects(spider2))
+             }
+         */
     }
     
     public void actionPerformed(ActionEvent e){
         repaint();
-        x += velx;
-        y += vely;
-       
-        
+        player.x += velx;
+        player.y += vely;
+    /*while(t.isRunning()){*/
+     for(int i = 0; i<spiders.size();i++){
+         
+        spiders.get(i).SpiderMovement(); 
+     }
+    
+    
     }
     
     public void up(){
@@ -119,4 +125,5 @@ public abstract class RatTest extends JPanel implements ActionListener, KeyListe
     public void keyReleased(KeyEvent e){
         repaint();
         t.stop();}
+    
 }
