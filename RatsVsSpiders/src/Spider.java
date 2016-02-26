@@ -33,7 +33,7 @@ public class Spider extends Rectangle {
         size = new Dimension(10, 10);
        */
        image = new ImageIcon("src/images/spiders.png");
-       ResizedImage = image.getImage().getScaledInstance(100, 100,Image.SCALE_DEFAULT);
+       ResizedImage = image.getImage().getScaledInstance(50, 50,Image.SCALE_DEFAULT);
        SpiderLocation();
      
        imageSize =image.getIconWidth();

@@ -27,9 +27,9 @@ public class Rat extends Rectangle{
         size = new Dimension(10, 10);
        */
        image = new ImageIcon("src/images/rat.png");
-       ResizedImage = image.getImage().getScaledInstance(150, 150,Image.SCALE_DEFAULT);
+       ResizedImage = image.getImage().getScaledInstance(80, 80,Image.SCALE_DEFAULT);
        
-     
+  
        imageSize =image.getIconWidth();
        setBounds(0,0, imageSize, imageSize);
        

@@ -45,7 +45,7 @@ public abstract class RatTest extends JPanel implements ActionListener, KeyListe
        
         player = new Rat(20, 20);
         counter = 0; 
-       score = new JTextArea("Score:" +counter);
+       score = new JTextArea("Hit arrow keys to start and try to hit the spiders!");
        add(score).setLocation(0,0);
        
       
@@ -63,9 +63,10 @@ public abstract class RatTest extends JPanel implements ActionListener, KeyListe
         {
             spiders.add(new Spider(10,10));
         }
-         //Here's the really bad collision
+        
          for(int i=0;i<spiders.size();i++){
-        spiders.get(i).Draw(g);
+        spiders.get(i).Draw(g); 
+//Here's the really bad collision
         if (player.intersects(spiders.get(i))){
            spiders.remove(i);
            counter= counter+1;
