@@ -24,23 +24,26 @@ public class Spider extends Rectangle {
     public int SpiderLocx;
     public int SpiderLocy;
     public int SpiderSpeed;
-    private final ImageIcon image;
-    private final int imageSize;
-    private Image ResizedImage;
-    
+    public ImageIcon image;
+    public  int imageSize;
+    public Image ResizedImage;
+
     public Spider(int width, int height){
        /* image = new Image("Test");*/
       /* spiderColor= Color.RED;
         size = new Dimension(10, 10);
        */
        image = new ImageIcon("src/images/spiders.png");
-       ResizedImage = image.getImage().getScaledInstance(70, 70,Image.SCALE_DEFAULT);
+       ResizedImage = image.getImage().getScaledInstance(width, height,Image.SCALE_DEFAULT);
        SpiderLocation();
      
        imageSize =image.getIconWidth();
-       setBounds(SpiderLocx, SpiderLocy, 40, 45);
+       setBounds(SpiderLocx, SpiderLocy, width, height);
+       
+           
        
     }
+    
      public void Draw(Graphics g) {
    
     

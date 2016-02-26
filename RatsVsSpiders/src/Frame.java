@@ -24,7 +24,7 @@ public class Frame extends JFrame{
      */
      
         JFrame f = new JFrame();
-        RatTest r = new RatTest() {};
+        CollisionPanel r = new CollisionPanel() {};
         f.add(r);
         f.setVisible(true);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

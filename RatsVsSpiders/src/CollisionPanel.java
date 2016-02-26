@@ -2,6 +2,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyListener;
@@ -33,10 +34,8 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
      public ArrayList<Spider> spiders;    
      private JTextArea score;
      int counter;
-     
-   public Rat player;
-    
-  
+    public Rat player;
+
   
     public CollisionPanel(){
        BorderLayout b1= new BorderLayout();
@@ -53,38 +52,33 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
       
     }
    
-      
+   
        
     public void paintComponent(Graphics g){
         super.paintComponent(g);
-       /* Graphics2D g2 = (Graphics2D) g;
-        g2.fill(new Ellipse2D.Double(x, y, 40, 40));*/
+ 
 
         player.DrawRat(g);
      
-     //    if (spiders.size()<3)
-      //  {
-      //      spiders.add(new Spider(10,10));
-     //  }
-        
+        if (spiders.size()<3)
+        {
+            spiders.add(new Spider(60,60));
+      }
+       
          for(int i=0;i<spiders.size();i++){
         spiders.get(i).Draw(g); 
-//Here's the really bad collision below
+            
        if (player.intersects(spiders.get(i))){
            spiders.remove(i);
-           spiders.add(new Spider((300),(300)));
+           spiders.add(new Spider(60+counter*5,60+counter*5));
            counter= counter+1;
+           
+           
+          
           score.setText("Score:" + counter);
            
        } 
        
-        
-        
-         
-  
- 
-             
-      
          }}
    
     
@@ -92,11 +86,7 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
         repaint();
         player.x += velx;
         player.y += vely;
-        
-    
-    
-    
-    
+  
     }
     
     public void up(){
