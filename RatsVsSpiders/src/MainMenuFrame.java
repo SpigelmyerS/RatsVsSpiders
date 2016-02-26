@@ -14,8 +14,8 @@ import javax.swing.*;
  */
 public class MainMenuFrame extends JFrame {
 
-    private static final int FRAME_WIDTH = 450;
-    private static final int FRAME_HEIGHT = 450;
+    private static final int FRAME_WIDTH = 800;
+    private static final int FRAME_HEIGHT = 600;
     private JButton startButton;
     private JButton quitButton;
     private JLabel startLabel;
@@ -47,8 +47,8 @@ public class MainMenuFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (action.equals("start")) {
-                    PlayPanel Play = new PlayPanel();
-                    
+                   Frame f1 = new Frame();
+                   dispose(); 
                    
                 }
                 if (action.equals("quit")) {
@@ -57,7 +57,7 @@ public class MainMenuFrame extends JFrame {
             }
         }
         startButton = new JButton("Start");
-        ActionListener startListener = new StartQuitListener("sale");
+        ActionListener startListener = new StartQuitListener("start");
         startButton.addActionListener(startListener);
         quitButton = new JButton("Quit");
         ActionListener quitListener = new StartQuitListener("Quit");
