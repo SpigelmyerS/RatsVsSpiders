@@ -6,7 +6,7 @@ import java.awt.Image;
 import java.awt.Rectangle;
 import javafx.scene.paint.ImagePattern;
 import javax.swing.ImageIcon;
-
+import java.util.Random;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -34,7 +34,7 @@ public class Spider extends Rectangle {
        */
        image = new ImageIcon("src/images/spiders.png");
        ResizedImage = image.getImage().getScaledInstance(100, 100,Image.SCALE_DEFAULT);
-       
+       SpiderMovement();
        imageSize =image.getIconWidth();
        setBounds(SpiderLocx, SpiderLocy, imageSize, imageSize);
        
@@ -48,12 +48,16 @@ public class Spider extends Rectangle {
        
      }       
      public void SpiderMovement(){
+         Random r = new Random();
+         int m = 0;
+        SpiderLocx =r.nextInt(750);
+        SpiderLocy = r.nextInt(550);
         
-          double Rn = Math.random();
+        
+        /*  double Rn = Math.random();
           int i = 1;
         int random = (int)(Rn*1000);
-        SpiderLocx = random;
-        SpiderLocy = random;
         
+        */
      }
 }
