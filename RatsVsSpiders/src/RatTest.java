@@ -65,7 +65,7 @@ public abstract class RatTest extends JPanel implements ActionListener, KeyListe
             spiders.add(new Spider(10,10));
         }
         
-         for(int i=0;i<spiders.size();i++){
+        for(int i=0;i<spiders.size();i++){
         spiders.get(i).Draw(g); 
 //Here's the really bad collision below
         if (player.intersects(spiders.get(i))){
