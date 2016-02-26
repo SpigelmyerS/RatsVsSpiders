@@ -12,6 +12,7 @@ import javax.swing.JFrame;
 import javax.swing.Timer;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
+import java.util.Random;
 
 
 
@@ -58,7 +59,7 @@ public abstract class RatTest extends JPanel implements ActionListener, KeyListe
        /* Graphics2D g2 = (Graphics2D) g;
         g2.fill(new Ellipse2D.Double(x, y, 40, 40));*/
         player.DrawRat(g);
-      
+     
          if (spiders.size()<3)
         {
             spiders.add(new Spider(10,10));
@@ -66,15 +67,17 @@ public abstract class RatTest extends JPanel implements ActionListener, KeyListe
         
          for(int i=0;i<spiders.size();i++){
         spiders.get(i).Draw(g); 
-//Here's the really bad collision
+//Here's the really bad collision below
         if (player.intersects(spiders.get(i))){
            spiders.remove(i);
            counter= counter+1;
            score.setText("Score:" + counter);
            
         }
+       
+        }
         
-         }
+         
   
  
              
@@ -86,12 +89,10 @@ public abstract class RatTest extends JPanel implements ActionListener, KeyListe
         repaint();
         player.x += velx;
         player.y += vely;
-    /*while(t.isRunning()){*/
-    /* for(int i = 0; i<spiders.size();i++){
-         
-        spiders.get(i).SpiderMovement(); 
-     }
-    */
+        
+    
+    
+    
     
     }
     
@@ -117,6 +118,7 @@ public abstract class RatTest extends JPanel implements ActionListener, KeyListe
     
     public void keyPressed(KeyEvent event){
         t.start();
+      SpiderMovement();
         int code = event.getKeyCode();
         
         if (code == KeyEvent.VK_UP){
@@ -138,4 +140,27 @@ public abstract class RatTest extends JPanel implements ActionListener, KeyListe
         repaint();
         t.stop();}
     
+    public void SpiderMovement(){
+        Random r = new Random();
+         for(int i = 0; i<spiders.size();i++){
+         
+        spiders.get(i).x+=r.nextInt(10);
+        repaint();
+        }
+         for(int i = 0; i<spiders.size();i++){
+         
+        spiders.get(i).x-=r.nextInt(10);
+        repaint();
+         }
+        for(int i = 0; i<spiders.size();i++){
+         
+        spiders.get(i).y+=r.nextInt(10);
+        repaint();
+        }
+        for(int i = 0; i<spiders.size();i++){
+         
+        spiders.get(i).y-=r.nextInt(10);
+        repaint();
+        }
+}
 }

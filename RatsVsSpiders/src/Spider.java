@@ -21,8 +21,9 @@ public class Spider extends Rectangle {
    
     /*private final Dimension size; */
     
-    private int SpiderLocx;
-    private int SpiderLocy;
+    public int SpiderLocx;
+    public int SpiderLocy;
+    public int SpiderSpeed;
     private final ImageIcon image;
     private final int imageSize;
     private Image ResizedImage;
@@ -33,20 +34,21 @@ public class Spider extends Rectangle {
         size = new Dimension(10, 10);
        */
        image = new ImageIcon("src/images/spiders.png");
-       ResizedImage = image.getImage().getScaledInstance(50, 50,Image.SCALE_DEFAULT);
+       ResizedImage = image.getImage().getScaledInstance(70, 70,Image.SCALE_DEFAULT);
        SpiderLocation();
      
        imageSize =image.getIconWidth();
-       setBounds(SpiderLocx, SpiderLocy, imageSize, imageSize);
+       setBounds(SpiderLocx, SpiderLocy, 40, 45);
        
     }
      public void Draw(Graphics g) {
    
-     g.drawImage(ResizedImage, this.x, this.y, null);
+    
+   g.drawImage(ResizedImage, this.x, this.y, null);
        
        
    
-       
+      
      }       
      public void SpiderLocation(){
          Random r = new Random();
@@ -56,22 +58,7 @@ public class Spider extends Rectangle {
               
         
      }
-     public void SpiderMovement(){
-       double Rn = Math.random();
-        int i = 1;
-        int random = (int)(Rn*3) + 1; 
-        if (random==1){
-             SpiderLocx = SpiderLocx+5;}
-               if(random==2){
-            SpiderLocx=SpiderLocx-5;
-               }
-               if(random==3){
-            SpiderLocy = SpiderLocy+5;
-                }
-               if(random==4){
-            SpiderLocy= SpiderLocy-5;
-            
-        }
+    
         
      }
-}
+
