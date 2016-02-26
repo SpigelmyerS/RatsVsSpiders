@@ -1,3 +1,4 @@
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -27,21 +28,25 @@ import java.util.ArrayList;
 public abstract class RatTest extends JPanel implements ActionListener, KeyListener{
     Timer t = new Timer(5,this);
     double x=0, y=0, velx=0, vely;
-     public ArrayList<Spider> spiders;     
+     public ArrayList<Spider> spiders;    
+     private JTextArea score;
+     int counter;
      
    public Rat player;
     
   
   
     public RatTest(){
-        
+        BorderLayout b1= new BorderLayout();
         spiders = new ArrayList();
         addKeyListener(this);
         setFocusable(true);
         setFocusTraversalKeysEnabled(false); 
        
         player = new Rat(20, 20);
-       
+        counter = 0; 
+       score = new JTextArea("Score:" +counter);
+       add(score).setLocation(0,0);
        
       
     }
@@ -58,16 +63,22 @@ public abstract class RatTest extends JPanel implements ActionListener, KeyListe
         {
             spiders.add(new Spider(10,10));
         }
+         //Here's the really bad collision
          for(int i=0;i<spiders.size();i++){
         spiders.get(i).Draw(g);
-        
+        if (player.intersects(spiders.get(i))){
+           spiders.remove(i);
+           counter= counter+1;
+           score.setText("Score:" + counter);
+           
+        }
         
          }
-      /* Possible Collison   for(Spider spider1: spiders){
-             for(Spider spider2 : spiders){
-                 if(spider1.intersects(spider2))
-             }
-         */
+  
+ 
+             
+      
+         
     }
     
     public void actionPerformed(ActionEvent e){
@@ -75,11 +86,11 @@ public abstract class RatTest extends JPanel implements ActionListener, KeyListe
         player.x += velx;
         player.y += vely;
     /*while(t.isRunning()){*/
-     for(int i = 0; i<spiders.size();i++){
+    /* for(int i = 0; i<spiders.size();i++){
          
         spiders.get(i).SpiderMovement(); 
      }
-    
+    */
     
     }
     
