@@ -26,6 +26,8 @@ import java.util.Random;
  *
  * @author Richa
  */
+
+//Testing GUIs, paintcomponent
 public abstract class RatTest extends JPanel implements ActionListener, KeyListener{
     Timer t = new Timer(5,this);
     double x=0, y=0, velx=0, vely;
@@ -67,7 +69,7 @@ public abstract class RatTest extends JPanel implements ActionListener, KeyListe
         
         for(int i=0;i<spiders.size();i++){
         spiders.get(i).Draw(g); 
-//Here's the really bad collision below
+
         if (player.intersects(spiders.get(i))){
            spiders.remove(i);
            counter= counter+1;
