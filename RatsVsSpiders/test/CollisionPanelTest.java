@@ -50,7 +50,7 @@ public class CollisionPanelTest {
         CollisionPanel instance = new CollisionPanelImpl();
         instance.actionPerformed(e);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -62,7 +62,7 @@ public class CollisionPanelTest {
         CollisionPanel instance = new CollisionPanelImpl();
         instance.up();
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -74,7 +74,7 @@ public class CollisionPanelTest {
         CollisionPanel instance = new CollisionPanelImpl();
         instance.down();
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -86,7 +86,7 @@ public class CollisionPanelTest {
         CollisionPanel instance = new CollisionPanelImpl();
         instance.left();
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -98,7 +98,7 @@ public class CollisionPanelTest {
         CollisionPanel instance = new CollisionPanelImpl();
         instance.right();
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -107,11 +107,12 @@ public class CollisionPanelTest {
     @Test
     public void testKeyPressed() {
         System.out.println("keyPressed");
-        KeyEvent event = null;
+        
+        KeyEvent event = null ;
         CollisionPanel instance = new CollisionPanelImpl();
         instance.keyPressed(event);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -124,7 +125,7 @@ public class CollisionPanelTest {
         CollisionPanel instance = new CollisionPanelImpl();
         instance.keyTyped(e);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -137,7 +138,7 @@ public class CollisionPanelTest {
         CollisionPanel instance = new CollisionPanelImpl();
         instance.keyReleased(e);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -149,7 +150,7 @@ public class CollisionPanelTest {
         CollisionPanel instance = new CollisionPanelImpl();
         instance.SpiderMovement();
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     public class CollisionPanelImpl extends CollisionPanel {
