@@ -24,15 +24,20 @@ public class CollisionPanelTest {
     }
     
     @Test
-    public void testPaintComponent() {
+    public void testSizeChange() {
 
         System.out.println("Check counter with size increase");
-        int counter = 5;
-        CollisionPanel instance = new CollisionPanelImpl();
-        int expSize = 85;       
         
+        CollisionPanel instance = new CollisionPanelImpl();
+        for (int i=0; i<6; i++){
+            
+        instance.counter = i;
+        }
+        int expSize = 85;       
+        int size = instance.counter*5+60;
+        assertEquals(expSize, size);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
