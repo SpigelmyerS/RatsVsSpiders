@@ -13,6 +13,7 @@ import javax.swing.JPanel;
  *
  * @author Suzanne
  */
+//Part of future iteration
 public class PlayPanel extends JPanel implements ActionListener {
     
 public PlayPanel(){
