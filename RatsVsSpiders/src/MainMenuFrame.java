@@ -1,6 +1,10 @@
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.*;
+import java.awt.font.*;
 import javax.swing.*;
 
 /*
@@ -21,6 +25,7 @@ public class MainMenuFrame extends JFrame {
     private JLabel startLabel;
     private JLabel quitLabel;
     private JTextField RatsVSpidersField;
+    Font font2 = new Font("Comic Sans MS",Font.BOLD,50);
     
     public MainMenuFrame() {
         this.createComponents();
@@ -57,18 +62,27 @@ public class MainMenuFrame extends JFrame {
             }
         }
         startButton = new JButton("Start");
+        startButton.setFont(font2);
+        startButton.setForeground(Color.RED);
         ActionListener startListener = new StartQuitListener("start");
         startButton.addActionListener(startListener);
         quitButton = new JButton("Quit");
+        quitButton.setFont(font2);
+        quitButton.setForeground(Color.RED);
         ActionListener quitListener = new StartQuitListener("Quit");
         quitButton.addActionListener(quitListener);
 
     }
 
     private void createTextField() {
-        final int FIELD_WIDTH = 10;
+        final int FIELD_WIDTH = 40;
+        Font font1 = new Font("SansSerif",Font.BOLD, 80);
         RatsVSpidersField = new JTextField(FIELD_WIDTH);
-        RatsVSpidersField.setText("RATS VS SPIDERS!");
+        RatsVSpidersField.setText("RATS vs SPIDERS!");
+        RatsVSpidersField.setLocation(50,50);
+        RatsVSpidersField.setFont(font1);
+        RatsVSpidersField.setForeground(Color.BLUE);
+        RatsVSpidersField.setHorizontalAlignment(JTextField.CENTER);
         RatsVSpidersField.setEditable(false);
     }
 
