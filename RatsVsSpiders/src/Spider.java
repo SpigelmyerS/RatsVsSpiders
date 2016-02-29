@@ -4,7 +4,6 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Rectangle;
-import javafx.scene.paint.ImagePattern;
 import javax.swing.ImageIcon;
 import java.util.Random;
 /*
