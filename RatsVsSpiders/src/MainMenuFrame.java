@@ -1,11 +1,16 @@
-
+import javax.swing.Timer;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.*;
 import java.awt.font.*;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import javax.swing.*;
+import sun.audio.*;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -18,14 +23,18 @@ import javax.swing.*;
  */
 public class MainMenuFrame extends JFrame {
 
+
     private static final int FRAME_WIDTH = 800;
     private static final int FRAME_HEIGHT = 600;
     private JButton startButton;
     private JButton quitButton;
+    private JButton spiderbutton;
     private JLabel startLabel;
     private JLabel quitLabel;
     private JTextField RatsVSpidersField;
     Font font2 = new Font("Comic Sans MS",Font.BOLD,50);
+    private ImageIcon image;
+    private Image sillyspider;
     
     public MainMenuFrame() {
         this.createComponents();
@@ -33,6 +42,9 @@ public class MainMenuFrame extends JFrame {
         this.setSize(FRAME_WIDTH, FRAME_HEIGHT);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
+        
+        image = new ImageIcon("src/images/spiders.png");
+        sillyspider = image.getImage();
     }
 
     private void createComponents() {
@@ -42,7 +54,8 @@ public class MainMenuFrame extends JFrame {
 
     private void createButtons() {
         class StartQuitListener implements ActionListener {
-
+  
+  
             private String action;
 
             public StartQuitListener(String action) {
@@ -71,7 +84,8 @@ public class MainMenuFrame extends JFrame {
         quitButton.setForeground(Color.RED);
         ActionListener quitListener = new StartQuitListener("Quit");
         quitButton.addActionListener(quitListener);
-
+        
+       
     }
 
     private void createTextField() {
@@ -87,10 +101,49 @@ public class MainMenuFrame extends JFrame {
     }
 
     private void createPanel() {
-        JPanel panel = new JPanel();
+        music();
+       
+        JPanel panel = new JPanel(); 
         panel.add(this.RatsVSpidersField);
         panel.add(this.startButton);
         panel.add(this.quitButton);
+        
         this.add(panel);
+       
     }
+    
+    public void paintComponent(Graphics g)
+    {  
+       
+        g.drawImage(sillyspider, 200, 200, null);
+    }
+    public void music(){
+        AudioPlayer Play = AudioPlayer.player; 
+        AudioStream audplay;
+        AudioData auddata;
+
+        ContinuousAudioDataStream loop = null;
+
+        try
+        {
+            InputStream test = new FileInputStream("src/images/jp harmonica.wav");
+            audplay = new AudioStream(test);
+            AudioPlayer.player.start(audplay);
+            
+
+        }
+        
+        catch(FileNotFoundException e){
+           
+        }
+        catch(IOException error)
+        {
+            
+        }
+        
+        }
+        
+
+            
+
 }
