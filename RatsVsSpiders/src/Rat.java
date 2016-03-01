@@ -15,7 +15,7 @@ import javax.swing.ImageIcon;
  * @author Suzanne
  */
 public class Rat extends Rectangle{
-     private int SpiderLocx;
+    private int SpiderLocx;
     private int SpiderLocy;
     private final ImageIcon image;
     private final int imageSize;
