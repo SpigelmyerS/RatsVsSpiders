@@ -20,20 +20,15 @@ public class Obstacles extends Rectangle {
     public int BallLocx;
     public int BallLocy;
     public ImageIcon image;
-    public  int imageSize;
+    public int imageSize;
     public Image ResizedImage;
 
     public Obstacles(int width, int height){
-       /* image = new Image("Test");*/
-      /* spiderColor= Color.RED;
-        size = new Dimension(10, 10);
-       */
        image = new ImageIcon("src/images/SoccerBall.png");
-       ResizedImage = image.getImage().getScaledInstance(width, height,Image.SCALE_DEFAULT);
-       ObstacleLocation();
+       ResizedImage = image.getImage().getScaledInstance(80, 80,Image.SCALE_DEFAULT);
      
        imageSize =image.getIconWidth();
-       setBounds(BallLocx, BallLocy, width, height);
+       setBounds(0, 0, imageSize, imageSize);
        
            
        
@@ -42,21 +37,8 @@ public class Obstacles extends Rectangle {
      public void Draw(Graphics g) {
    
     
-   g.drawImage(ResizedImage, this.x, this.y, null);
-       
-       
-   
-      
-     }       
-     public void ObstacleLocation(){
-         Random r = new Random();
-         int m = 0;
-        BallLocx =r.nextInt(750);
-        BallLocy = r.nextInt(550);
-              
-        
-     }
-    
-        
-     }
+        g.drawImage(ResizedImage, this.x, this.y, null);
+
+     } 
+}
 
