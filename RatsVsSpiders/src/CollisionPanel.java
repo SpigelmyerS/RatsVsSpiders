@@ -108,7 +108,7 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
     }
     
     public void down(){
-        vely = 1.5;
+        vely = 2;
         velx = 0;
     }
         
@@ -118,7 +118,7 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
     }
     
     public void right(){
-        velx = 1.5;
+        velx = 2;
         vely = 0;
     }
     
@@ -168,5 +168,6 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
         spiders.get(i).y-=r.nextInt(10);
         repaint();
         }
+        
 }
 } 
