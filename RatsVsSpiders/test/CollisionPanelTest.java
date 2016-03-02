@@ -22,6 +22,22 @@ public class CollisionPanelTest {
     
     public CollisionPanelTest() {
     }
+
+    @BeforeClass
+    public static void setUpClass() throws Exception {
+    }
+
+    @AfterClass
+    public static void tearDownClass() throws Exception {
+    }
+
+    @Before
+    public void setUp() throws Exception {
+    }
+
+    @After
+    public void tearDown() throws Exception {
+    }
     
     @Test
     public void testSizeChange() {
@@ -154,6 +170,19 @@ public class CollisionPanelTest {
     }
 
     public class CollisionPanelImpl extends CollisionPanel {
+    }
+
+    /**
+     * Test of paintComponent method, of class CollisionPanel.
+     */
+    @Test
+    public void testPaintComponent() {
+        System.out.println("paintComponent");
+        Graphics g = null;
+        CollisionPanel instance = new CollisionPanelImpl();
+        instance.paintComponent(g);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
     }
     
 }

@@ -77,7 +77,7 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
            
            
           
-          score.setText("Score:" + counter);
+          score.setText("Score:" + counter*100);
            
        } 
        
@@ -88,7 +88,18 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
         repaint();
         player.x += velx;
         player.y += vely;
-  
+        if (player.x > 700){
+            player.x = 700;
+        }
+        if (player.x < 0){
+            player.x = 0;
+        }
+        if (player.y > 500){
+            player.y = 500;
+        }
+        if (player.y < 0){
+            player.y = 0;
+        }
     }
     
     public void up(){
@@ -97,7 +108,7 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
     }
     
     public void down(){
-        vely = 1.5;
+        vely = 2;
         velx = 0;
     }
         
@@ -107,7 +118,7 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
     }
     
     public void right(){
-        velx = 1.5;
+        velx = 2;
         vely = 0;
     }
     
@@ -157,5 +168,6 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
         spiders.get(i).y-=r.nextInt(10);
         repaint();
         }
+        
 }
 } 
