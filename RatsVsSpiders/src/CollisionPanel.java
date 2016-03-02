@@ -88,14 +88,14 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
         repaint();
         player.x += velx;
         player.y += vely;
-        if (player.x > 700){
-            player.x = 700;
+        if (player.x > 1100){
+            player.x = 1100;
         }
         if (player.x < 0){
             player.x = 0;
         }
-        if (player.y > 500){
-            player.y = 500;
+        if (player.y > 600){
+            player.y = 600;
         }
         if (player.y < 0){
             player.y = 0;

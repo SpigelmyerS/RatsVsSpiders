@@ -30,7 +30,7 @@ public class Obstacles extends Rectangle {
        ResizedImage = image.getImage().getScaledInstance(80, 80,Image.SCALE_DEFAULT);
      
        imageSize =image.getIconWidth();
-       setBounds(5, 5, imageSize, imageSize);
+       setBounds(65, 75, imageSize, imageSize);
        
            
        
