@@ -20,6 +20,7 @@ public class main {
         
        
        MainMenuFrame f2 = new MainMenuFrame();
+       
     }
     
 }
