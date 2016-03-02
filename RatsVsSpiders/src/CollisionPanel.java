@@ -35,6 +35,7 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
      private JTextArea score;
      int counter;
     public Rat player;
+    public Obstacles ball;
 
   
     public CollisionPanel(){
@@ -57,7 +58,8 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
     public void paintComponent(Graphics g){
         super.paintComponent(g);
  
-
+        ball = new Obstacles(50, 50);
+        ball.Draw(g);
         player.DrawRat(g);
      
         if (spiders.size()<3)
