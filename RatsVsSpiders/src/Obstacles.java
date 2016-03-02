@@ -22,13 +22,15 @@ public class Obstacles extends Rectangle {
     public ImageIcon image;
     public int imageSize;
     public Image ResizedImage;
+ 
+    public Obstacles ball;
 
     public Obstacles(int width, int height){
        image = new ImageIcon("src/images/SoccerBall.png");
        ResizedImage = image.getImage().getScaledInstance(80, 80,Image.SCALE_DEFAULT);
      
        imageSize =image.getIconWidth();
-       setBounds(0, 0, imageSize, imageSize);
+       setBounds(5, 5, imageSize, imageSize);
        
            
        

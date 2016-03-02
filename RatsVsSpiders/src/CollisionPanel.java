@@ -49,7 +49,7 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
        counter = 0; 
       score = new JTextArea("Hit arrow keys to start and try to hit the spiders!");
        add(score).setLocation(0,0);
-       
+       ball = new Obstacles(50, 50);
       
     }
    
@@ -58,7 +58,7 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
     public void paintComponent(Graphics g){
         super.paintComponent(g);
  
-        ball = new Obstacles(50, 50);
+        
         ball.Draw(g);
         player.DrawRat(g);
      

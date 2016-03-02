@@ -35,8 +35,9 @@ public abstract class RatTest extends JPanel implements ActionListener, KeyListe
      private JTextArea score;
      int counter;
      
+     
    public Rat player;
-    
+   public Obstacles ball;
   
   
     public RatTest(){
@@ -61,7 +62,7 @@ public abstract class RatTest extends JPanel implements ActionListener, KeyListe
        /* Graphics2D g2 = (Graphics2D) g;
         g2.fill(new Ellipse2D.Double(x, y, 40, 40));*/
         player.DrawRat(g);
-     
+        ball.Draw(g);
          if (spiders.size()<3)
         {
             spiders.add(new Spider(10,10));
