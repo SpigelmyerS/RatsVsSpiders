@@ -31,7 +31,7 @@ public class Rat extends Rectangle{
        
   
        imageSize =image.getIconWidth();
-       setBounds(0,0, imageSize, imageSize);
+       setBounds(400,400, imageSize, imageSize);
        
     }
      public void DrawRat(Graphics g) {

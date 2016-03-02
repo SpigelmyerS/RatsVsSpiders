@@ -75,7 +75,7 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
            
            
           
-          score.setText("Score:" + counter);
+          score.setText("Score:" + counter*100);
            
        } 
        
@@ -86,7 +86,18 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
         repaint();
         player.x += velx;
         player.y += vely;
-  
+        if (player.x > 700){
+            player.x = 700;
+        }
+        if (player.x < 0){
+            player.x = 0;
+        }
+        if (player.y > 500){
+            player.y = 500;
+        }
+        if (player.y < 0){
+            player.y = 0;
+        }
     }
     
     public void up(){
