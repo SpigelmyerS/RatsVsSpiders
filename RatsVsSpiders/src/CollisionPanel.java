@@ -38,6 +38,7 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
     public Obstacles ball;
     public Obstacles yoyo;
     public Obstacles calculator;
+    public Obstacles pencil;
   
     public CollisionPanel(){
         BorderLayout b1= new BorderLayout();
@@ -53,6 +54,7 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
         ball = new Obstacles(50, 50);
         yoyo = new Obstacles(50, 50);
         calculator = new Obstacles(50, 50);
+        pencil = new Obstacles(50, 50);
     }
    
    
@@ -65,6 +67,7 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
         ball.Draw(g);
         yoyo.Draw(g);
         calculator.Draw(g);
+        pencil.Draw(g);
         
         player.DrawRat(g);
      

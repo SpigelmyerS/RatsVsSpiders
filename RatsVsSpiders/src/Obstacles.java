@@ -21,8 +21,7 @@ public class Obstacles extends Rectangle {
     Image ball;
     Image yoyo;
     Image calculator;
- 
-    //public Obstacles ball;
+    Image pencil;
 
     public Obstacles(int width, int height){
         ImageIcon soccerball = new ImageIcon("src/images/SmallSoccerBall.png");
@@ -33,6 +32,9 @@ public class Obstacles extends Rectangle {
         
         ImageIcon calc = new ImageIcon("src/images/calculator.png");
         calculator = calc.getImage();
+        
+        ImageIcon yellowpencil = new ImageIcon("src/images/pencil.png");
+        pencil = yellowpencil.getImage();
     }
     
     public void Draw(Graphics g) {
@@ -40,7 +42,7 @@ public class Obstacles extends Rectangle {
         g.drawImage(ball, 225, 300, null);
         g.drawImage(yoyo, 400, 400, null);
         g.drawImage(calculator, 700, 300, null);
-
+        g.drawImage(pencil, 650, 450, null);
     } 
 }
 
