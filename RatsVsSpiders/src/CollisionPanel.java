@@ -31,46 +31,46 @@ import java.util.Random;
 public abstract class CollisionPanel extends JPanel implements ActionListener, KeyListener{
     Timer t = new Timer(5,this);
     double x=0, y=0, velx=0, vely;
-     public ArrayList<Spider> spiders;    
-     private JTextArea score;
-     int counter;
+    public ArrayList<Spider> spiders;    
+    private JTextArea score;
+    int counter;
     public Rat player;
     public Obstacles ball;
+    Image image;
+    Image image2;
 
   
     public CollisionPanel(){
-       BorderLayout b1= new BorderLayout();
+        BorderLayout b1= new BorderLayout();
         spiders = new ArrayList();
-       addKeyListener(this);
+        addKeyListener(this);
         setFocusable(true);
-       setFocusTraversalKeysEnabled(false); 
+        setFocusTraversalKeysEnabled(false); 
        
         player = new Rat(50, 50);
-       counter = 0; 
-      score = new JTextArea("Hit arrow keys to start and try to hit the spiders!");
-       add(score).setLocation(0,0);
-       ball = new Obstacles(50, 50);
-      
+        counter = 0; 
+        score = new JTextArea("Hit arrow keys to start and try to hit the spiders!");
+        add(score).setLocation(0,0);
+        ball = new Obstacles(50, 50);
     }
    
    
        
     public void paintComponent(Graphics g){
         super.paintComponent(g);
- 
-        
         ball.Draw(g);
         player.DrawRat(g);
      
         if (spiders.size()<3)
         {
             spiders.add(new Spider(60,60));
-      }
+        }
        
-         for(int i=0;i<spiders.size();i++){
+        for(int i=0;i<spiders.size();i++)
+        {
         spiders.get(i).Draw(g); 
             
-       if (player.intersects(spiders.get(i))){
+        if (player.intersects(spiders.get(i))){
            spiders.remove(i);
            spiders.add(new Spider(60+counter*5,60+counter*5));
            counter= counter+1;

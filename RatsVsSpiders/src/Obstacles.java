@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -17,30 +18,20 @@ import java.util.Random;
  */
 public class Obstacles extends Rectangle {
   
-    public int BallLocx;
-    public int BallLocy;
-    public ImageIcon image;
-    public int imageSize;
-    public Image ResizedImage;
+    Image ball;
+    Image image2;
  
-    public Obstacles ball;
+    //public Obstacles ball;
 
     public Obstacles(int width, int height){
-       image = new ImageIcon("src/images/SoccerBall.png");
-       ResizedImage = image.getImage().getScaledInstance(80, 80,Image.SCALE_DEFAULT);
-     
-       imageSize =image.getIconWidth();
-       setBounds(65, 75, imageSize, imageSize);
-       
-           
-       
+        ImageIcon soccerball = new ImageIcon("src/images/SmallSoccerBall.png");
+        ball = soccerball.getImage();
     }
     
-     public void Draw(Graphics g) {
+    public void Draw(Graphics g) {
    
-    
-        g.drawImage(ResizedImage, this.x, this.y, null);
+        g.drawImage(ball, 225, 300, null);
 
-     } 
+    } 
 }
 
