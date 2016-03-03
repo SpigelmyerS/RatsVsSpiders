@@ -37,10 +37,11 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
     public Rat player;
     public Obstacles ball;
     public Obstacles yoyo;
-    public Obstacles calculator;
     public Obstacles pencil;
     public Obstacles chair;
-  
+    public Obstacles spiderweb;
+    public Obstacles books;
+    
     public CollisionPanel(){
         BorderLayout b1= new BorderLayout();
         spiders = new ArrayList();
@@ -54,9 +55,10 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
         add(score).setLocation(0,0);
         ball = new Obstacles(50, 50);
         yoyo = new Obstacles(50, 50);
-        calculator = new Obstacles(50, 50);
         pencil = new Obstacles(50, 50);
         chair = new Obstacles(50, 50);
+        spiderweb = new Obstacles(50, 50);
+        books = new Obstacles(50, 50);
     }
    
    
@@ -68,9 +70,10 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
         floor.paintIcon(this, g, x, y);
         ball.Draw(g);
         yoyo.Draw(g);
-        calculator.Draw(g);
         pencil.Draw(g);
         chair.Draw(g);
+        spiderweb.Draw(g);
+        books.Draw(g);
         
         player.DrawRat(g);
      
@@ -101,8 +104,8 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
         repaint();
         player.x += velx;
         player.y += vely;
-        if (player.x > 1100){
-            player.x = 1100;
+        if (player.x > 1120){
+            player.x = 1120;
         }
         if (player.x < 0){
             player.x = 0;
