@@ -36,8 +36,7 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
     int counter;
     public Rat player;
     public Obstacles ball;
-    public Obstacles yoyo;    
-
+    public Obstacles yoyo; 
   
     public CollisionPanel(){
         BorderLayout b1= new BorderLayout();
@@ -58,6 +57,9 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
        
     public void paintComponent(Graphics g){
         super.paintComponent(g);
+        ImageIcon floor = new ImageIcon("src/images/Floor.png");
+        int x = 0, y = 0;
+        floor.paintIcon(this, g, x, y);
         ball.Draw(g);
         yoyo.Draw(g);
         
