@@ -20,7 +20,7 @@ public class Obstacles extends Rectangle {
   
     Image ball;
     Image yoyo;
-    Image floor;
+    Image calculator;
  
     //public Obstacles ball;
 
@@ -31,16 +31,15 @@ public class Obstacles extends Rectangle {
         ImageIcon YoYo = new ImageIcon("src/images/yoyo.png");
         yoyo = YoYo.getImage();
         
-        //ImageIcon floorlayout = new ImageIcon("src/images/Floor.png");
-        //floor = floorlayout.getImage();
+        ImageIcon calc = new ImageIcon("src/images/calculator.png");
+        calculator = calc.getImage();
     }
     
     public void Draw(Graphics g) {
    
-        //g.drawImage(floor, 900, 700, null);
         g.drawImage(ball, 225, 300, null);
         g.drawImage(yoyo, 400, 400, null);
-        
+        g.drawImage(calculator, 700, 300, null);
 
     } 
 }
