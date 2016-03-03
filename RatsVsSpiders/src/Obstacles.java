@@ -19,18 +19,23 @@ import java.util.Random;
 public class Obstacles extends Rectangle {
   
     Image ball;
-    Image image2;
+    Image yoyo;
  
     //public Obstacles ball;
 
     public Obstacles(int width, int height){
         ImageIcon soccerball = new ImageIcon("src/images/SmallSoccerBall.png");
         ball = soccerball.getImage();
+        
+        ImageIcon YoYo = new ImageIcon("src/images/yoyo.png");
+        yoyo = YoYo.getImage();
     }
     
     public void Draw(Graphics g) {
    
         g.drawImage(ball, 225, 300, null);
+        g.drawImage(yoyo, 400, 400, null);
+        
 
     } 
 }
