@@ -22,6 +22,7 @@ public class Obstacles extends Rectangle {
     Image yoyo;
     Image calculator;
     Image pencil;
+    Image chair;
 
     public Obstacles(int width, int height){
         ImageIcon soccerball = new ImageIcon("src/images/SmallSoccerBall.png");
@@ -35,6 +36,9 @@ public class Obstacles extends Rectangle {
         
         ImageIcon yellowpencil = new ImageIcon("src/images/pencil.png");
         pencil = yellowpencil.getImage();
+        
+        ImageIcon brownchair = new ImageIcon("src/images/chair.png");
+        chair = brownchair.getImage();
     }
     
     public void Draw(Graphics g) {
@@ -43,6 +47,8 @@ public class Obstacles extends Rectangle {
         g.drawImage(yoyo, 400, 400, null);
         g.drawImage(calculator, 700, 300, null);
         g.drawImage(pencil, 650, 450, null);
+        g.drawImage(chair, -10, -225, null);
+        
     } 
 }
 
