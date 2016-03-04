@@ -19,8 +19,8 @@ public class main {
     public static void main(String args[]) {
         
        
-       MainMenuFrame f2 = new MainMenuFrame();
-       
+     MainMenuFrame f2 = new MainMenuFrame();
+     
     }
     
 }
