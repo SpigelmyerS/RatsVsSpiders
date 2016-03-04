@@ -17,7 +17,7 @@ import javax.swing.ImageIcon;
 public class Rat extends Rectangle{
     private int SpiderLocx;
     private int SpiderLocy;
-    private final ImageIcon image;
+    private ImageIcon image;
     private final int imageSize;
     private Image ResizedImage;
     
@@ -26,7 +26,7 @@ public class Rat extends Rectangle{
       /* spiderColor= Color.RED;
         size = new Dimension(10, 10);
        */
-       image = new ImageIcon("src/images/rat.png");
+      image = new ImageIcon("src/images/rat.gif");
        ResizedImage = image.getImage().getScaledInstance(80, 80,Image.SCALE_DEFAULT);
        
   
@@ -38,9 +38,13 @@ public class Rat extends Rectangle{
    
      g.drawImage(ResizedImage, this.x, this.y, null);
        
-       
-   
-       
-     }       
+      }
+     public final void Invert(){
+         image = new ImageIcon("src/images/rat_flipped.gif"); ResizedImage = image.getImage();
+     }
+     public final void RightOrient(){
+         image = new ImageIcon("src/images/rat.gif"); ResizedImage = image.getImage();
+     }
+     
     
 }

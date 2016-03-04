@@ -110,10 +110,12 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
     
     public void actionPerformed(ActionEvent e){
         repaint();
+        revalidate();
         player.x += velx;
         player.y += vely;
         if (player.x > 1120){
             player.x = 1120;
+            
         }
         if (player.x < 0){
             player.x = 0;
@@ -139,11 +141,13 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
     public void left(){
         velx = -1.5;
         vely = 0;
+        
     }
     
     public void right(){
         velx = 2;
         vely = 0;
+        
     }
     
     public void keyPressed(KeyEvent event){
@@ -153,15 +157,21 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
         
         if (code == KeyEvent.VK_UP){
             up();
+            
         }
         if (code == KeyEvent.VK_DOWN){
             down();
+            
         }
         if (code == KeyEvent.VK_RIGHT){
+            player.RightOrient();
             right();
+            
         }
         if (code == KeyEvent.VK_LEFT){
+            player.Invert();
             left();
+            
         }
     }
     
@@ -192,6 +202,8 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
         spiders.get(i).y-=r.nextInt(10);
         repaint();
         }
+        
+        //placed down here to avoid multiple window issue
    if(score.getText().equals("Game Over")){
        GameOverPanel gmv = new GameOverPanel();
        
