@@ -87,14 +87,22 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
         spiders.get(i).Draw(g); 
             
         if (player.intersects(spiders.get(i))){
+           if (player.width<spiders.get(i).width){
+           if (player.height<spiders.get(i).height){
+               score.setText("Game Over");
+           }
+                   }
+           else {
            spiders.remove(i);
            spiders.add(new Spider(60+counter*5,60+counter*5));
            counter= counter+1;
-           
-           
+
+           score.setText("Score:" + counter*100); 
+           }
+
           
-          score.setText("Score:" + counter*100);
            
+
        } 
        
          }}
