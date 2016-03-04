@@ -126,7 +126,7 @@ public class MainMenuFrame extends JFrame {
 
         try
         {
-            InputStream test = new FileInputStream("src/images/jp harmonica.wav");
+            InputStream test = new FileInputStream("src/images/jp harmonica_1.wav");
             audplay = new AudioStream(test);
             AudioPlayer.player.start(audplay);
             

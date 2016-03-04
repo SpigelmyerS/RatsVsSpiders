@@ -192,6 +192,9 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
         spiders.get(i).y-=r.nextInt(10);
         repaint();
         }
-        
+   if(score.getText().equals("Game Over")){
+       GameOverPanel gmv = new GameOverPanel();
+       
+   }     
 }
 } 
