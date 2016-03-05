@@ -33,6 +33,7 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
     double x=0, y=0, velx=0, vely;
     public ArrayList<Spider> spiders;    
     private JTextArea score;
+    private JTextArea Gameset;
     int counter;
     public Rat player;
     public Obstacles ball;
@@ -51,7 +52,8 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
        
         player = new Rat(50, 50);
         counter = 0; 
-        score = new JTextArea("Hit arrow keys to start and try to hit the spiders!");
+        score = new JTextArea("Hit arrow keys to start and try to hit the spiders! But careful, the large ones will eat you!");
+        Gameset = new JTextArea("");
         add(score).setLocation(0,0);
         ball = new Obstacles(50, 50);
         yoyo = new Obstacles(50, 50);
@@ -89,7 +91,7 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
         if (player.intersects(spiders.get(i))){
            if (player.width<spiders.get(i).width){
            if (player.height<spiders.get(i).height){
-               score.setText("Game Over");
+               Gameset.setText("Game Over");
              
            }
                    }
@@ -225,9 +227,9 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
         }
         
         //placed down here to avoid multiple window issue
-   if(score.getText().equals("Game Over")){
+   if(Gameset.getText().equals("Game Over")){
        GameOverPanel gmv = new GameOverPanel();
-       
+       gmv.FinalScore.setText(score.getText());
    }     
 }
 } 

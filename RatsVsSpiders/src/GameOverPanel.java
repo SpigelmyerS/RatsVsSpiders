@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import java.lang.Math;
+import javax.swing.JTextArea;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -34,7 +35,8 @@ public class GameOverPanel extends JFrame {
     Font font2 = new Font("Comic Sans MS",Font.BOLD,50);
     private ImageIcon image;
     private Image sillyspider;
-    
+    public JTextArea FinalScore;
+   
     public GameOverPanel() {
         this.createComponents();
         this.createPanel();
@@ -44,6 +46,11 @@ public class GameOverPanel extends JFrame {
         
         image = new ImageIcon("src/images/spiders.png");
         sillyspider = image.getImage();
+        
+        
+       
+        
+       
     }
 
     private void createComponents() {
@@ -83,6 +90,7 @@ public class GameOverPanel extends JFrame {
         quitButton.setForeground(Color.RED);
         ActionListener quitListener = new AgainQuitListener("Quit");
         quitButton.addActionListener(quitListener);
+        FinalScore = new JTextArea("");
         
        
     }
@@ -101,10 +109,11 @@ public class GameOverPanel extends JFrame {
 
     private void createPanel() {
         JPanel panel = new JPanel(); 
-        panel.add(this.GameOverTextField);
+       panel.add(this.GameOverTextField);
+       panel.add(this.FinalScore);
         panel.add(this.againButton);
         panel.add(this.quitButton);
-        
+       
         this.add(panel);
        
     }

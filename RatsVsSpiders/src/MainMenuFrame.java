@@ -34,8 +34,9 @@ public class MainMenuFrame extends JFrame {
     private JTextField RatsVSpidersField;
     Font font2 = new Font("Comic Sans MS",Font.BOLD,50);
     private ImageIcon image;
-    private Image sillyspider;
-    
+   /* private Image sillyspider;
+    private JLabel background;
+    */
     public MainMenuFrame() {
         this.createComponents();
         this.createPanel();
@@ -43,8 +44,8 @@ public class MainMenuFrame extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
         
-        image = new ImageIcon("src/images/spiders.png");
-        sillyspider = image.getImage();
+       // image = new ImageIcon("src/images/spiders.png");
+        //sillyspider = image.getImage();
     }
 
     private void createComponents() {
@@ -104,6 +105,7 @@ public class MainMenuFrame extends JFrame {
         music();
        
         JPanel panel = new JPanel(); 
+        
         panel.add(this.RatsVSpidersField);
         panel.add(this.startButton);
         panel.add(this.quitButton);
@@ -112,11 +114,11 @@ public class MainMenuFrame extends JFrame {
        
     }
     
-    public void paintComponent(Graphics g)
-    {  
+   /* public void paintComponent(Graphics g)
+    {  super.paintComponents(g);
        
         g.drawImage(sillyspider, 200, 200, null);
-    }
+    }*/
     public void music(){
         AudioPlayer Play = AudioPlayer.player; 
         AudioStream audplay;
