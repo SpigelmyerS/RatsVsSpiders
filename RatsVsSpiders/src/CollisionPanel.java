@@ -94,9 +94,13 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
                    }
            else {
            spiders.remove(i);
-           spiders.add(new Spider(60+counter*5,60+counter*5));
+        
            counter= counter+1;
-
+           if (counter%2 == 0){
+               
+               player.setSize(80+counter*3, 80+counter*3);
+               player.DrawRat(g);
+           }
            score.setText("Score:" + counter*100); 
            }
 
@@ -149,7 +153,7 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
         vely = 0;
         
     }
-    
+    int spiderMaker;
     public void keyPressed(KeyEvent event){
         t.start();
       SpiderMovement();
@@ -157,21 +161,36 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
         
         if (code == KeyEvent.VK_UP){
             up();
+            spiderMaker++;
+            if ((spiderMaker%40)==0){
+                spiders.add(new Spider(60+spiderMaker/6,60+spiderMaker/6));
+            }
             
         }
         if (code == KeyEvent.VK_DOWN){
             down();
+            spiderMaker++;
+            if ((spiderMaker%40)==0){
+                spiders.add(new Spider(60+spiderMaker/6,60+spiderMaker/6));
+            }
             
         }
         if (code == KeyEvent.VK_RIGHT){
             player.RightOrient();
             right();
+            spiderMaker++;
+            if ((spiderMaker%40)==0){
+                spiders.add(new Spider(60+spiderMaker/6,60+spiderMaker/6));
+            }
             
         }
         if (code == KeyEvent.VK_LEFT){
             player.Invert();
             left();
-            
+            spiderMaker++;
+            if ((spiderMaker%40)==0){
+                spiders.add(new Spider(60+spiderMaker/6,60+spiderMaker/6));
+            }
         }
     }
     
