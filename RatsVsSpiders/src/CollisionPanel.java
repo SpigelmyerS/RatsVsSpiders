@@ -90,18 +90,20 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
            if (player.width<spiders.get(i).width){
            if (player.height<spiders.get(i).height){
                score.setText("Game Over");
+             
            }
                    }
            else {
            spiders.remove(i);
         
-           counter= counter+1;
+           counter++;
            if (counter%2 == 0){
-               
-               player.setSize(80+counter*3, 80+counter*3);
+               player.width = 80+counter;
+               player.height = 80+counter;
                player.DrawRat(g);
            }
            score.setText("Score:" + counter*100); 
+           
            }
 
           
@@ -162,7 +164,7 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
         if (code == KeyEvent.VK_UP){
             up();
             spiderMaker++;
-            if ((spiderMaker%40)==0){
+            if ((spiderMaker%33)==0){
                 spiders.add(new Spider(60+spiderMaker/6,60+spiderMaker/6));
             }
             
@@ -170,7 +172,7 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
         if (code == KeyEvent.VK_DOWN){
             down();
             spiderMaker++;
-            if ((spiderMaker%40)==0){
+            if ((spiderMaker%33)==0){
                 spiders.add(new Spider(60+spiderMaker/6,60+spiderMaker/6));
             }
             
@@ -179,7 +181,7 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
             player.RightOrient();
             right();
             spiderMaker++;
-            if ((spiderMaker%40)==0){
+            if ((spiderMaker%33)==0){
                 spiders.add(new Spider(60+spiderMaker/6,60+spiderMaker/6));
             }
             
@@ -188,7 +190,7 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
             player.Invert();
             left();
             spiderMaker++;
-            if ((spiderMaker%40)==0){
+            if ((spiderMaker%33)==0){
                 spiders.add(new Spider(60+spiderMaker/6,60+spiderMaker/6));
             }
         }
