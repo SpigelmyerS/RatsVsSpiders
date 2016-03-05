@@ -50,7 +50,7 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
         setFocusable(true);
         setFocusTraversalKeysEnabled(false); 
        
-        player = new Rat(50, 50);
+        player = new Rat(70, 70);
         counter = 0; 
         score = new JTextArea("Hit arrow keys to start and try to hit the spiders! But careful, the large ones will eat you!");
         Gameset = new JTextArea("");
