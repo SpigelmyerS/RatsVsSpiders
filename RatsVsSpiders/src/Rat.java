@@ -22,10 +22,7 @@ public class Rat extends Rectangle{
     private Image ResizedImage;
     
     public Rat(int width, int height){
-       /* image = new Image("Test");*/
-      /* spiderColor= Color.RED;
-        size = new Dimension(10, 10);
-       */
+
       image = new ImageIcon("src/images/rat.gif");
        ResizedImage = image.getImage().getScaledInstance(80, 80,Image.SCALE_DEFAULT);
        
