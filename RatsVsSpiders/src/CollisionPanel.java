@@ -157,7 +157,7 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
         vely = 0;
         
     }
-    int spiderMaker;
+    int movementCounter;
     public void keyPressed(KeyEvent event){
         t.start();
       SpiderMovement();
@@ -165,35 +165,36 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
         
         if (code == KeyEvent.VK_UP){
             up();
-            spiderMaker++;
-            if ((spiderMaker%33)==0){
-                spiders.add(new Spider(60+spiderMaker/6,60+spiderMaker/6));
+            movementCounter++;
+            if ((movementCounter%33)==0){
+                spiders.add(new Spider(60+movementCounter/6,60+movementCounter/6));
             }
             
         }
         if (code == KeyEvent.VK_DOWN){
             down();
-            spiderMaker++;
-            if ((spiderMaker%33)==0){
-                spiders.add(new Spider(60+spiderMaker/6,60+spiderMaker/6));
+            movementCounter++;
+            if ((movementCounter%33
+                    )==0){
+                spiders.add(new Spider(60+movementCounter/6,60+movementCounter/6));
             }
             
         }
         if (code == KeyEvent.VK_RIGHT){
             player.RightOrient();
             right();
-            spiderMaker++;
-            if ((spiderMaker%33)==0){
-                spiders.add(new Spider(60+spiderMaker/6,60+spiderMaker/6));
+            movementCounter++;
+            if ((movementCounter%33)==0){
+                spiders.add(new Spider(60+movementCounter/6,60+movementCounter/6));
             }
             
         }
         if (code == KeyEvent.VK_LEFT){
             player.Invert();
             left();
-            spiderMaker++;
-            if ((spiderMaker%33)==0){
-                spiders.add(new Spider(60+spiderMaker/6,60+spiderMaker/6));
+            movementCounter++;
+            if ((movementCounter%33)==0){
+                spiders.add(new Spider(60+movementCounter/6,60+movementCounter/6));
             }
         }
     }
