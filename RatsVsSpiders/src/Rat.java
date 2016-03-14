@@ -15,8 +15,6 @@ import javax.swing.ImageIcon;
  * @author Suzanne
  */
 public class Rat extends Rectangle{
-    private int SpiderLocx;
-    private int SpiderLocy;
     private ImageIcon image;
     private final int imageSize;
     private Image ResizedImage;
@@ -24,11 +22,10 @@ public class Rat extends Rectangle{
     public Rat(int width, int height){
 
       image = new ImageIcon("src/images/rat.gif");
-       ResizedImage = image.getImage().getScaledInstance(80, 80,Image.SCALE_DEFAULT);
-       
-  
-       imageSize =image.getIconWidth();
-       setBounds(400,400, imageSize, imageSize);
+      ResizedImage = image.getImage().getScaledInstance(80, 80,Image.SCALE_DEFAULT);
+      
+      imageSize =image.getIconWidth();
+      setBounds(400,400, imageSize, imageSize);
        
     }
      public void DrawRat(Graphics g) {

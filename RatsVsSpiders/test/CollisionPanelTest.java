@@ -41,19 +41,15 @@ public class CollisionPanelTest {
     
     @Test
     public void testSizeChange() {
-
         System.out.println("Check counter with size increase");
-        
-        CollisionPanel instance = new CollisionPanelImpl();
-        for (int i=0; i<6; i++){
-            
-        instance.counter = i;
+        CollisionPanel instance = new CollisionPanelImpl();    
+        for (int i=0; i<6; i++){       
+            instance.counter = i;
         }
         int expSize = 85;       
         int size = instance.counter*5+60;
         assertEquals(expSize, size);
         // TODO review the generated test code and remove the default call to fail.
-        
     }
 
     /**
@@ -73,10 +69,12 @@ public class CollisionPanelTest {
      * Test of up method, of class CollisionPanel.
      */
     @Test
-    public void testUp() {
+    public void testUpVelY() {
         System.out.println("up");
+        double expResult = -1.5;
         CollisionPanel instance = new CollisionPanelImpl();
         instance.up();
+        assertEquals(expResult, instance.vely, 2);
         // TODO review the generated test code and remove the default call to fail.
        
     }
