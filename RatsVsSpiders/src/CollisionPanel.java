@@ -29,6 +29,7 @@ import java.util.Random;
  */
 
 public abstract class CollisionPanel extends JPanel implements ActionListener, KeyListener{
+    
     Timer t = new Timer(5,this);
     double x=0, y=0, velx=0, vely;
     public ArrayList<Spider> spiders;    
@@ -67,9 +68,11 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
        
     public void paintComponent(Graphics g){
         super.paintComponent(g);
+        
         ImageIcon floor = new ImageIcon("src/images/Floor.png");
         int x = 0, y = 0;
         floor.paintIcon(this, g, x, y);
+        
         ball.Draw(g);
         yoyo.Draw(g);
         pencil.Draw(g);
@@ -79,22 +82,19 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
         
         player.DrawRat(g);
      
-        if (spiders.size()<3)
-        {
+        if (spiders.size()<3){
             spiders.add(new Spider(60,60));
         }
        
-        for(int i=0;i<spiders.size();i++)
-        {
-        spiders.get(i).Draw(g); 
+        for(int i=0;i<spiders.size();i++){
+            spiders.get(i).Draw(g); 
             
         if (player.intersects(spiders.get(i))){
-           if (player.width<spiders.get(i).width){
-           if (player.height<spiders.get(i).height){
-               Gameset.setText("Game Over");
-             
-           }
-                   }
+            if (player.width<spiders.get(i).width){
+                if (player.height<spiders.get(i).height){
+            Gameset.setText("Game Over");
+                }
+            }
            else {
            spiders.remove(i);
         
