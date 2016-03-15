@@ -5,8 +5,6 @@
  */
 
 import java.awt.Graphics;
-import java.awt.event.ActionEvent;
-import java.awt.event.KeyEvent;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -53,19 +51,6 @@ public class CollisionPanelTest {
     }
 
     /**
-     * Test of actionPerformed method, of class CollisionPanel.
-     */
-    @Test
-    public void testActionPerformed() {
-        System.out.println("actionPerformed");
-        ActionEvent e = null;
-        CollisionPanel instance = new CollisionPanelImpl();
-        instance.actionPerformed(e);
-        // TODO review the generated test code and remove the default call to fail.
-        
-    }
-
-    /**
      * Test of up method, of class CollisionPanel.
      */
     @Test
@@ -76,95 +61,85 @@ public class CollisionPanelTest {
         instance.up();
         assertEquals(expResult, instance.vely, 2);
         // TODO review the generated test code and remove the default call to fail.
-       
+    }
+    
+    @Test
+    public void testUpVelX() {
+        System.out.println("up");
+        double expResult = 0;
+        CollisionPanel instance = new CollisionPanelImpl();
+        instance.up();
+        assertEquals(expResult, instance.velx, 2);
+        // TODO review the generated test code and remove the default call to fail.
     }
 
     /**
      * Test of down method, of class CollisionPanel.
      */
     @Test
-    public void testDown() {
+    public void testDownVelY() {
         System.out.println("down");
+        double expResult = 2;
         CollisionPanel instance = new CollisionPanelImpl();
         instance.down();
+        assertEquals(expResult, instance.vely, 2);
         // TODO review the generated test code and remove the default call to fail.
-       
+    }
+    
+    @Test
+    public void testDownVelX() {
+        System.out.println("down");
+        double expResult = 0;
+        CollisionPanel instance = new CollisionPanelImpl();
+        instance.down();
+        assertEquals(expResult, instance.velx, 2);
+        // TODO review the generated test code and remove the default call to fail.
     }
 
     /**
      * Test of left method, of class CollisionPanel.
      */
     @Test
-    public void testLeft() {
+    public void testLeftVelY() {
         System.out.println("left");
+        double expResult = 0;
         CollisionPanel instance = new CollisionPanelImpl();
         instance.left();
+        assertEquals(expResult, instance.vely, 2);
         // TODO review the generated test code and remove the default call to fail.
-       
+    }
+    
+    @Test
+    public void testLeftVelX() {
+        System.out.println("left");
+        double expResult = -1.5;
+        CollisionPanel instance = new CollisionPanelImpl();
+        instance.left();
+        assertEquals(expResult, instance.velx, 2);
+        // TODO review the generated test code and remove the default call to fail.
     }
 
     /**
      * Test of right method, of class CollisionPanel.
      */
     @Test
-    public void testRight() {
+    public void testRightVelY() {
         System.out.println("right");
+        double expResult = 0;
         CollisionPanel instance = new CollisionPanelImpl();
         instance.right();
+        assertEquals(expResult, instance.vely, 2);
         // TODO review the generated test code and remove the default call to fail.
-        
     }
-
-    /**
-     * Test of keyPressed method, of class CollisionPanel.
-     */
+    
     @Test
-    public void testKeyPressed() {
-        System.out.println("keyPressed");
-        
-        KeyEvent event = null ;
+    public void testRightVelX() {
+        System.out.println("right");
+        double expResult = 2;
         CollisionPanel instance = new CollisionPanelImpl();
-        instance.keyPressed(event);
+        instance.right();
+        assertEquals(expResult, instance.velx, 2);
         // TODO review the generated test code and remove the default call to fail.
-       
-    }
-
-    /**
-     * Test of keyTyped method, of class CollisionPanel.
-     */
-    @Test
-    public void testKeyTyped() {
-        System.out.println("keyTyped");
-        KeyEvent e = null;
-        CollisionPanel instance = new CollisionPanelImpl();
-        instance.keyTyped(e);
-        // TODO review the generated test code and remove the default call to fail.
-       
-    }
-
-    /**
-     * Test of keyReleased method, of class CollisionPanel.
-     */
-    @Test
-    public void testKeyReleased() {
-        System.out.println("keyReleased");
-        KeyEvent e = null;
-        CollisionPanel instance = new CollisionPanelImpl();
-        instance.keyReleased(e);
-        // TODO review the generated test code and remove the default call to fail.
-        
-    }
-
-    /**
-     * Test of SpiderMovement method, of class CollisionPanel.
-     */
-    @Test
-    public void testSpiderMovement() {
-        System.out.println("SpiderMovement");
-        CollisionPanel instance = new CollisionPanelImpl();
-        instance.SpiderMovement();
-        // TODO review the generated test code and remove the default call to fail.
-        
     }
 
     public class CollisionPanelImpl extends CollisionPanel {
