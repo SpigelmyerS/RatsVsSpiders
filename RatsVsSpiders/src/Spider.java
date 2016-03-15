@@ -16,51 +16,38 @@ import java.util.Random;
  *
  * @author Suzanne
  */
+
+/* 
+   Refactored the "Spider" Class.
+   Contributed by: Richa Patel
+*/
+
 public class Spider extends Rectangle {
-   
-    /*private final Dimension size; */
-    
     public int SpiderLocx;
     public int SpiderLocy;
     public int SpiderSpeed;
-    public ImageIcon image;
-    public  int imageSize;
-    public Image ResizedImage;
+    public ImageIcon spiderImage;
+    public  int spiderImageSize;
+    public Image ResizedSpiderImage;
 
     public Spider(int width, int height){
-       /* image = new Image("Test");*/
-      /* spiderColor= Color.RED;
-        size = new Dimension(10, 10);
-       */
-       image = new ImageIcon("src/images/spiders.gif");
-       ResizedImage = image.getImage().getScaledInstance(width, height,Image.SCALE_DEFAULT);
-       SpiderLocation();
-     
-       imageSize =image.getIconWidth();
-       setBounds(SpiderLocx, SpiderLocy, width, height);
-       
-           
-       
+       spiderImage = new ImageIcon("src/images/spiders.gif");
+       ResizedSpiderImage = spiderImage.getImage().getScaledInstance(width, height,Image.SCALE_DEFAULT);
+       SpiderLocation(); 
+       spiderImageSize = spiderImage.getIconWidth();
+       setBounds(SpiderLocx, SpiderLocy, width, height);   
     }
     
-     public void Draw(Graphics g) {
-   
+    public void Draw(Graphics g) {
+        g.drawImage(ResizedSpiderImage, this.x, this.y, null);
+  
+    }
     
-   g.drawImage(ResizedImage, this.x, this.y, null);
-       
-       
-   
-      
-     }       
-     public void SpiderLocation(){
-         Random r = new Random();
-         int m = 0;
-        SpiderLocx =r.nextInt(750);
-        SpiderLocy = r.nextInt(550);
-              
-        
-     }
-    
-        
-     }
+    public void SpiderLocation(){
+        Random r = new Random();
+        int m = 0;
+        SpiderLocx = r.nextInt(750);
+        SpiderLocy = r.nextInt(550); 
+    }
+}
 

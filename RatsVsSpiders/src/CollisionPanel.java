@@ -1,21 +1,14 @@
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyListener;
-import java.awt.geom.Ellipse2D;
 import javax.swing.JPanel;
 import javax.swing.*;
-import javax.swing.JFrame;
 import javax.swing.Timer;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.Random;
-
-
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -28,14 +21,14 @@ import java.util.Random;
  * @author lap5486
  */
 
-public abstract class CollisionPanel extends JPanel implements ActionListener, KeyListener{
-    
+public abstract class CollisionPanel extends JPanel implements ActionListener, KeyListener{   
     Timer t = new Timer(5,this);
     double x=0, y=0, velx=0, vely;
     public ArrayList<Spider> spiders;    
     private JTextArea score;
     private JTextArea Gameset;
-    int counter;
+    int counter = 0;
+    int movementCounter;
     public Rat player;
     public Obstacles ball;
     public Obstacles yoyo;
@@ -46,13 +39,12 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
     
     public CollisionPanel(){
         BorderLayout b1= new BorderLayout();
-        spiders = new ArrayList();
         addKeyListener(this);
         setFocusable(true);
         setFocusTraversalKeysEnabled(false); 
        
+        spiders = new ArrayList();
         player = new Rat(70, 70);
-        counter = 0; 
         score = new JTextArea("Hit arrow keys to start and try to hit the spiders! But careful, the large ones will eat you!");
         Gameset = new JTextArea("");
         add(score).setLocation(0,0);
@@ -64,8 +56,6 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
         books = new Obstacles(50, 50);
     }
    
-   
-       
     public void paintComponent(Graphics g){
         super.paintComponent(g);
         
@@ -95,25 +85,19 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
             Gameset.setText("Game Over");
                 }
             }
-           else {
-           spiders.remove(i);
-        
-           counter++;
-           if (counter%2 == 0){
+            else {
+                spiders.remove(i);
+                counter++; 
+            if (counter%2 == 0){
                player.width = 80+counter;
                player.height = 80+counter;
                player.DrawRat(g);
-           }
-           score.setText("Score:" + counter*100); 
+            }
            
-           }
-
-          
-           
-
-       } 
-       
-         }}
+            score.setText("Score:" + counter*100); 
+            }}
+        }
+    }
    
     
     public void actionPerformed(ActionEvent e){
@@ -154,13 +138,12 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
     
     public void right(){
         velx = 2;
-        vely = 0;
-        
+        vely = 0;    
     }
-    int movementCounter;
+    
     public void keyPressed(KeyEvent event){
         t.start();
-      SpiderMovement();
+        SpiderMovement();
         int code = event.getKeyCode();
         
         if (code == KeyEvent.VK_UP){
@@ -169,8 +152,8 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
             if ((movementCounter%33)==0){
                 spiders.add(new Spider(60+movementCounter/6,60+movementCounter/6));
             }
-            
         }
+        
         if (code == KeyEvent.VK_DOWN){
             down();
             movementCounter++;
@@ -178,8 +161,8 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
                     )==0){
                 spiders.add(new Spider(60+movementCounter/6,60+movementCounter/6));
             }
-            
         }
+        
         if (code == KeyEvent.VK_RIGHT){
             player.RightOrient();
             right();
@@ -187,8 +170,8 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
             if ((movementCounter%33)==0){
                 spiders.add(new Spider(60+movementCounter/6,60+movementCounter/6));
             }
-            
         }
+        
         if (code == KeyEvent.VK_LEFT){
             player.Invert();
             left();
@@ -200,37 +183,39 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
     }
     
     public void keyTyped(KeyEvent e){}
+    
     public void keyReleased(KeyEvent e){
         repaint();
-        t.stop();}
+        t.stop();
+    }
     
     public void SpiderMovement(){
         Random r = new Random();
-         for(int i = 0; i<spiders.size();i++){
-         
-        spiders.get(i).x+=r.nextInt(10);
-        repaint();
-        }
-         for(int i = 0; i<spiders.size();i++){
-         
-        spiders.get(i).x-=r.nextInt(10);
-        repaint();
-         }
+        
         for(int i = 0; i<spiders.size();i++){
-         
-        spiders.get(i).y+=r.nextInt(10);
-        repaint();
+            spiders.get(i).x+=r.nextInt(10);
+            repaint();
         }
+        
         for(int i = 0; i<spiders.size();i++){
-         
-        spiders.get(i).y-=r.nextInt(10);
-        repaint();
+            spiders.get(i).x-=r.nextInt(10);
+            repaint();
+        }
+        
+        for(int i = 0; i<spiders.size();i++){
+            spiders.get(i).y+=r.nextInt(10);
+            repaint();
+        }
+        
+        for(int i = 0; i<spiders.size();i++){
+            spiders.get(i).y-=r.nextInt(10);
+            repaint();
         }
         
         //placed down here to avoid multiple window issue
-   if(Gameset.getText().equals("Game Over")){
-       GameOverPanel gmv = new GameOverPanel();
-       gmv.FinalScore.setText(score.getText());
-   }     
-}
+        if(Gameset.getText().equals("Game Over")){
+            GameOverPanel gmv = new GameOverPanel();
+            gmv.FinalScore.setText(score.getText());
+        }     
+    }
 } 

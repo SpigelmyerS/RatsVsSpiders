@@ -16,8 +16,7 @@ import java.util.Random;
  *
  * @author Richa
  */
-public class Obstacles extends Rectangle {
-  
+public class Obstacles extends Rectangle { 
     Image ball;
     Image yoyo;
     Image pencil;

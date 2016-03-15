@@ -16,7 +16,7 @@ import javax.swing.ImageIcon;
  */
 
 /* 
-   Refactored the variables names in "Rat" Class.
+   Refactored the "Rat" Class.
    Contributed by: Richa Patel
 */
 
@@ -37,10 +37,12 @@ public class Rat extends Rectangle{
     }
     
     public final void Invert(){
-        ratImage = new ImageIcon("src/images/rat_flipped.gif"); ResizedRatImage = ratImage.getImage();
+        ratImage = new ImageIcon("src/images/rat_flipped.gif");
+        ResizedRatImage = ratImage.getImage();
     }
     
      public final void RightOrient(){
-        ratImage = new ImageIcon("src/images/rat.gif"); ResizedRatImage = ratImage.getImage();
+        ratImage = new ImageIcon("src/images/rat.gif");
+        ResizedRatImage = ratImage.getImage();
     }
 }
