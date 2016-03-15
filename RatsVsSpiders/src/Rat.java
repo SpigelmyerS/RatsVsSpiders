@@ -14,31 +14,33 @@ import javax.swing.ImageIcon;
  *
  * @author Suzanne
  */
-public class Rat extends Rectangle{
-    private ImageIcon image;
-    private final int imageSize;
-    private Image ResizedImage;
+
+/* 
+   Refactored the variables names in "Rat" Class.
+   Contributed by: Richa Patel
+*/
+
+public class Rat extends Rectangle{  
+    private ImageIcon ratImage;
+    private final int ratImageSize;
+    private Image ResizedRatImage;
     
     public Rat(int width, int height){
-
-      image = new ImageIcon("src/images/rat.gif");
-      ResizedImage = image.getImage().getScaledInstance(80, 80,Image.SCALE_DEFAULT);
-      
-      imageSize =image.getIconWidth();
-      setBounds(400,400, imageSize, imageSize);
-       
+      ratImage = new ImageIcon("src/images/rat.gif");
+      ResizedRatImage = ratImage.getImage().getScaledInstance(80, 80,Image.SCALE_DEFAULT);
+      ratImageSize =ratImage.getIconWidth();
+      setBounds(400,400, ratImageSize, ratImageSize);    
     }
-     public void DrawRat(Graphics g) {
-   
-     g.drawImage(ResizedImage, this.x, this.y, null);
-       
-      }
-     public final void Invert(){
-         image = new ImageIcon("src/images/rat_flipped.gif"); ResizedImage = image.getImage();
-     }
-     public final void RightOrient(){
-         image = new ImageIcon("src/images/rat.gif"); ResizedImage = image.getImage();
-     }
-     
     
+    public void DrawRat(Graphics g) {
+        g.drawImage(ResizedRatImage, this.x, this.y, null);
+    }
+    
+    public final void Invert(){
+        ratImage = new ImageIcon("src/images/rat_flipped.gif"); ResizedRatImage = ratImage.getImage();
+    }
+    
+     public final void RightOrient(){
+        ratImage = new ImageIcon("src/images/rat.gif"); ResizedRatImage = ratImage.getImage();
+    }
 }
