@@ -146,7 +146,10 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
         velx = 2;
         vely = 0;    
     }
-    
+    // Refactored using "Extract Method"
+    //Changed the function into a defined variable
+    //Refactored by Levi Potutschnig
+    int spiderSize = 60+movementCounter/6;
     public void keyPressed(KeyEvent event){
         t.start();
         SpiderMovement();
@@ -156,7 +159,7 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
             up();
             movementCounter++;
             if ((movementCounter%33)==0){
-                spiders.add(new Spider(60+movementCounter/6,60+movementCounter/6));
+                spiders.add(new Spider(spiderSize,spiderSize));
             }
         }
         
@@ -165,7 +168,7 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
             movementCounter++;
             if ((movementCounter%33
                     )==0){
-                spiders.add(new Spider(60+movementCounter/6,60+movementCounter/6));
+                spiders.add(new Spider(spiderSize,spiderSize));
             }
         }
         
@@ -174,7 +177,7 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
             right();
             movementCounter++;
             if ((movementCounter%33)==0){
-                spiders.add(new Spider(60+movementCounter/6,60+movementCounter/6));
+                spiders.add(new Spider(spiderSize,spiderSize));
             }
         }
         
@@ -183,7 +186,7 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
             left();
             movementCounter++;
             if ((movementCounter%33)==0){
-                spiders.add(new Spider(60+movementCounter/6,60+movementCounter/6));
+                spiders.add(new Spider(spiderSize,spiderSize));
             }
         }
     }
