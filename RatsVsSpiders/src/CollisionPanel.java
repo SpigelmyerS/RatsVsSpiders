@@ -100,8 +100,8 @@ public class CollisionPanel extends JPanel implements ActionListener, KeyListene
     }
    
 
-    //Refactored; turned magic numbers into variables
-    //By Matt Ford
+    //Replaced magic number with symbolic constant
+    //Refactored by Matt Ford
     public void actionPerformed(ActionEvent e){
         final int rightBound = 1120;
         final int leftBound = 0;
