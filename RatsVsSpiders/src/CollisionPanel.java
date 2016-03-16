@@ -146,11 +146,11 @@ public class CollisionPanel extends JPanel implements ActionListener, KeyListene
         velx = 2;
         vely = 0;    
     }
-    // Refactored using "Extract Method"
+    public void keyPressed(KeyEvent event){
+        // Refactored using "Extract Method"
     //Changed the function into a defined variable
     //Refactored by Levi Potutschnig
-    int spiderSize = 60+movementCounter/6;
-    public void keyPressed(KeyEvent event){
+        int spiderSize = 60+movementCounter/6;
         t.start();
         SpiderMovement();
         int code = event.getKeyCode();
@@ -166,8 +166,7 @@ public class CollisionPanel extends JPanel implements ActionListener, KeyListene
         if (code == KeyEvent.VK_DOWN){
             down();
             movementCounter++;
-            if ((movementCounter%33
-                    )==0){
+            if ((movementCounter%33)==0){
                 spiders.add(new Spider(spiderSize,spiderSize));
             }
         }
