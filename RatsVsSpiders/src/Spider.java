@@ -18,8 +18,8 @@ import java.util.Random;
  */
 
 /* 
-   Refactored the "Spider" Class.
-   Contributed by: Richa Patel
+   Refactored variable names in the "Spider" Class.
+   Refactored by: Richa Patel
 */
 
 public class Spider extends Rectangle {

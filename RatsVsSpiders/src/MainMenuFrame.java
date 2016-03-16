@@ -29,14 +29,9 @@ public class MainMenuFrame extends JFrame {
     private JButton startButton;
     private JButton quitButton;
     private JButton spiderbutton;
-    private JLabel startLabel;
-    private JLabel quitLabel;
     private JTextField RatsVSpidersField;
     Font font2 = new Font("Comic Sans MS",Font.BOLD,50);
-    private ImageIcon image;
-   /* private Image sillyspider;
-    private JLabel background;
-    */
+    
     public MainMenuFrame() {
         this.createComponents();
         this.createPanel();
@@ -44,8 +39,6 @@ public class MainMenuFrame extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
         
-       // image = new ImageIcon("src/images/spiders.png");
-        //sillyspider = image.getImage();
     }
 
     private void createComponents() {
@@ -114,11 +107,6 @@ public class MainMenuFrame extends JFrame {
        
     }
     
-   /* public void paintComponent(Graphics g)
-    {  super.paintComponents(g);
-       
-        g.drawImage(sillyspider, 200, 200, null);
-    }*/
     public void music(){
         AudioPlayer Play = AudioPlayer.player; 
         AudioStream audplay;
@@ -144,12 +132,5 @@ public class MainMenuFrame extends JFrame {
         }
         
         }
-
-    void paintComponent(Graphics g) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-        
-
             
-
 }
