@@ -11,6 +11,8 @@ import javax.swing.JFrame;
  *
  * @author Suzanne
  */
+//Removed cruft class PlayPanel
+//Refactored by Matt Ford
 public class main {
 
     /**
