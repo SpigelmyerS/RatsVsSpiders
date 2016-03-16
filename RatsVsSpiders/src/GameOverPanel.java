@@ -33,8 +33,6 @@ public class GameOverPanel extends JFrame {
     private JButton spiderbutton;
     private JTextField GameOverTextField;
     private Font font2 = new Font("Comic Sans MS",Font.BOLD,50);
-    private ImageIcon image;
-    private Image sillyspider;
     public JTextArea FinalScore;
    
     public GameOverPanel() {
@@ -43,14 +41,7 @@ public class GameOverPanel extends JFrame {
         this.setSize(FRAME_WIDTH, FRAME_HEIGHT);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
-        
-        image = new ImageIcon("src/images/spiders.png");
-        sillyspider = image.getImage();
-        
-        
-       
-        
-       
+               
     }
 
     private void createComponents() {
