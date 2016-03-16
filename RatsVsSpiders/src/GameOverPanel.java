@@ -32,7 +32,7 @@ public class GameOverPanel extends JFrame {
     private JButton quitButton;
     private JButton spiderbutton;
     private JTextField GameOverTextField;
-    Font font2 = new Font("Comic Sans MS",Font.BOLD,50);
+    private Font font2 = new Font("Comic Sans MS",Font.BOLD,50);
     private ImageIcon image;
     private Image sillyspider;
     public JTextArea FinalScore;
@@ -72,7 +72,13 @@ public class GameOverPanel extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 if (action.equals("again")) {
                    Frame f1 = new Frame();
-                   dispose(); 
+                   MainMenuFrame mf1 =new MainMenuFrame();
+                   CollisionPanel c1 = new CollisionPanel();
+                   f1.dispose();
+                   mf1.dispose();   //Added dispose actions to remove windows upon restart of game -Suzanne Spigelmyer
+                   dispose();
+                   
+                  
                    
                 }
                 if (action.equals("quit")) {
