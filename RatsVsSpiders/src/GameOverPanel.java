@@ -18,13 +18,11 @@ import javax.swing.JTextArea;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Jason
  */
 public class GameOverPanel extends JFrame {
-
 
     private static final int FRAME_WIDTH = 800;
     private static final int FRAME_HEIGHT = 600;
@@ -32,18 +30,17 @@ public class GameOverPanel extends JFrame {
     private JButton quitButton;
     private JButton spiderbutton;
     private JTextField GameOverTextField;
-    private JTextField PPM;
-    private Font font2 = new Font("Comic Sans MS",Font.BOLD,50);
-     private Font font3 = new Font("Comic Sans MS",Font.BOLD,4);
+    private Font font2 = new Font("Comic Sans MS", Font.BOLD, 50);
+    private Font font3 = new Font("Comic Sans MS", Font.BOLD, 6);
     public JTextArea FinalScore;
-   
+
     public GameOverPanel() {
         this.createComponents();
         this.createPanel();
         this.setSize(FRAME_WIDTH, FRAME_HEIGHT);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
-               
+
     }
 
     private void createComponents() {
@@ -51,10 +48,9 @@ public class GameOverPanel extends JFrame {
         this.createTextField();
     }
 
-     private void createButtons() {
+    private void createButtons() {
         class AgainQuitListener implements ActionListener {
-  
-  
+
             private String action;
 
             public AgainQuitListener(String action) {
@@ -64,15 +60,13 @@ public class GameOverPanel extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (action.equals("again")) {
-                   Frame f1 = new Frame();
-                   MainMenuFrame mf1 =new MainMenuFrame();
-                   CollisionPanel c1 = new CollisionPanel();
-                   f1.dispose();
-                   mf1.dispose();   //Added dispose actions to remove windows upon restart of game -Suzanne Spigelmyer
-                   dispose();
-                   
-                  
-                   
+                    Frame f1 = new Frame();
+                    MainMenuFrame mf1 = new MainMenuFrame();
+                    CollisionPanel c1 = new CollisionPanel();
+                    f1.dispose();
+                    mf1.dispose();   //Added dispose actions to remove windows upon restart of game -Suzanne Spigelmyer
+                    dispose();
+
                 }
                 if (action.equals("quit")) {
                     System.exit(0);
@@ -90,35 +84,29 @@ public class GameOverPanel extends JFrame {
         ActionListener quitListener = new AgainQuitListener("Quit");
         quitButton.addActionListener(quitListener);
         FinalScore = new JTextArea("");
-        
-       
+
     }
 
     private void createTextField() {
         final int FIELD_WIDTH = 40;
-        Font font1 = new Font("SansSerif",Font.BOLD, 80);
+        Font font1 = new Font("SansSerif", Font.BOLD, 80);
         GameOverTextField = new JTextField(FIELD_WIDTH);
         GameOverTextField.setText("Git Gud Kiddo!");
-        GameOverTextField.setLocation(50,50);
+        GameOverTextField.setLocation(50, 50);
         GameOverTextField.setFont(font1);
         GameOverTextField.setForeground(Color.BLUE);
         GameOverTextField.setHorizontalAlignment(JTextField.CENTER);
         GameOverTextField.setEditable(false);
-        
-        PPM = new JTextField(12);
-        PPM.setText("rip PlayPanel");
-        PPM.setFont(font3);
-        PPM.setEditable(false);
     }
 
     private void createPanel() {
-        JPanel panel = new JPanel(); 
-       panel.add(this.GameOverTextField);
-       panel.add(this.FinalScore);
+        JPanel panel = new JPanel();
+        panel.add(this.GameOverTextField);
+        panel.add(this.FinalScore);
         panel.add(this.againButton);
         panel.add(this.quitButton);
-       
+
         this.add(panel);
-       
+
     }
 }
