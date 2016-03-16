@@ -37,18 +37,6 @@ public class MainMenuFrameTest {
     public void tearDown() {
     }
 
-    /**
-     * Test of paintComponent method, of class MainMenuFrame.
-     */
-    @Test
-    public void testPaintComponent() {
-        System.out.println("paintComponent");
-        Graphics g = null;
-        MainMenuFrame instance = new MainMenuFrame();
-        instance.paintComponent(g);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
 
     /**
      * Test of music method, of class MainMenuFrame.
