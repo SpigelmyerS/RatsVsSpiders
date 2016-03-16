@@ -32,7 +32,9 @@ public class GameOverPanel extends JFrame {
     private JButton quitButton;
     private JButton spiderbutton;
     private JTextField GameOverTextField;
+    private JTextField PPM;
     private Font font2 = new Font("Comic Sans MS",Font.BOLD,50);
+     private Font font3 = new Font("Comic Sans MS",Font.BOLD,4);
     public JTextArea FinalScore;
    
     public GameOverPanel() {
@@ -102,6 +104,11 @@ public class GameOverPanel extends JFrame {
         GameOverTextField.setForeground(Color.BLUE);
         GameOverTextField.setHorizontalAlignment(JTextField.CENTER);
         GameOverTextField.setEditable(false);
+        
+        PPM = new JTextField(12);
+        PPM.setText("rip PlayPanel");
+        PPM.setFont(font3);
+        PPM.setEditable(false);
     }
 
     private void createPanel() {
