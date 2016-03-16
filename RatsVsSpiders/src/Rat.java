@@ -16,8 +16,8 @@ import javax.swing.ImageIcon;
  */
 
 /* 
-   Refactored the "Rat" Class.
-   Contributed by: Richa Patel
+   Refactored variable names in the "Rat" Class.
+   Refactored by: Richa Patel
 */
 
 public class Rat extends Rectangle{  
