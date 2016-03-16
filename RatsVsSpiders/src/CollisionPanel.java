@@ -21,7 +21,7 @@ import java.util.Random;
  * @author lap5486
  */
 
-public abstract class CollisionPanel extends JPanel implements ActionListener, KeyListener{   
+public class CollisionPanel extends JPanel implements ActionListener, KeyListener{   
     Timer t = new Timer(5,this);
     double x=0, y=0, velx=0, vely;
     public ArrayList<Spider> spiders;    
