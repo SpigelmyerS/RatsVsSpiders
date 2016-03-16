@@ -45,7 +45,7 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
        
         spiders = new ArrayList();
         player = new Rat(70, 70);
-        score = new JTextArea("Hit arrow keys to start and try to hit the spiders! But careful, the large ones will eat you!");
+        score = new JTextArea("Hit arrow keys to start and try to hit the spiders! But be careful, the large ones will eat you!");
         Gameset = new JTextArea("");
         add(score).setLocation(0,0);
         ball = new Obstacles(50, 50);
@@ -99,24 +99,30 @@ public abstract class CollisionPanel extends JPanel implements ActionListener, K
         }
     }
    
-    
+
+    //Refactored; turned magic numbers into variables
+    //By Matt Ford
     public void actionPerformed(ActionEvent e){
+        final int rightBound = 1120;
+        final int leftBound = 0;
+        final int lowerBound = 0;
+        final int upperBound = 600;
         repaint();
         revalidate();
         player.x += velx;
         player.y += vely;
-        if (player.x > 1120){
-            player.x = 1120;
+        if (player.x > rightBound){
+            player.x = rightBound;
             
         }
-        if (player.x < 0){
-            player.x = 0;
+        if (player.x < leftBound){
+            player.x = leftBound;
         }
-        if (player.y > 600){
-            player.y = 600;
+        if (player.y > upperBound){
+            player.y = upperBound;
         }
-        if (player.y < 0){
-            player.y = 0;
+        if (player.y < lowerBound){
+            player.y = lowerBound;
         }
     }
     
