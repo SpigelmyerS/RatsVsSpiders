@@ -225,6 +225,8 @@ public class CollisionPanel extends JPanel implements ActionListener, KeyListene
         if(Gameset.getText().equals("Game Over")){
             GameOverPanel gmv = new GameOverPanel();
             gmv.FinalScore.setText(score.getText());
+            this.setVisible(false); //Sets window as false to display that this first game is no longer running upon losing.
+                                    //Suzanne Spigelmyer
         }     
     }
 } 

@@ -29,6 +29,8 @@ public class GameOverPanel extends JFrame {
     private Font font2 = new Font("Comic Sans MS", Font.BOLD, 50);
     private Font font3 = new Font("Comic Sans MS", Font.BOLD, 6);
     public JTextArea FinalScore;
+    
+    
 
     public GameOverPanel() {
         this.createComponents();
@@ -47,6 +49,7 @@ public class GameOverPanel extends JFrame {
     private void createButtons() {
         class AgainQuitListener implements ActionListener {
             
+            
             private String action;
             public AgainQuitListener(String action) {
                 this.action = action.toLowerCase();
@@ -54,12 +57,12 @@ public class GameOverPanel extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (action.equals("again")) {
+                    MainMenuFrame m1;
+                    
                     Frame f1 = new Frame();
-                    MainMenuFrame mf1 = new MainMenuFrame();
-                    CollisionPanel c1 = new CollisionPanel();
                     f1.dispose();
-                    mf1.dispose();   //Added dispose actions to remove windows upon restart of game -Suzanne Spigelmyer
-                    dispose();
+                    f1.setVisible(false);
+                    dispose(); //Adjusted dispose actions to view windows as inactive -Suzanne Spigelmyer
 
                 }
                 if (action.equals("quit")) {
