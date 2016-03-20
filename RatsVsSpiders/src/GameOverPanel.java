@@ -1,16 +1,11 @@
-
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import java.lang.Math;
 import javax.swing.JTextArea;
 
 /*
@@ -22,8 +17,9 @@ import javax.swing.JTextArea;
  *
  * @author Jason
  */
+// GameOverPanel borrowed a lot of code from the MainMenuFrame I made earlier so most of my reasoning
+// that I used when designing the main menu was reused here but with slight variations
 public class GameOverPanel extends JFrame {
-
     private static final int FRAME_WIDTH = 800;
     private static final int FRAME_HEIGHT = 600;
     private JButton againButton;
@@ -50,13 +46,11 @@ public class GameOverPanel extends JFrame {
 
     private void createButtons() {
         class AgainQuitListener implements ActionListener {
-
+            
             private String action;
-
             public AgainQuitListener(String action) {
                 this.action = action.toLowerCase();
             }
-
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (action.equals("again")) {
@@ -105,7 +99,6 @@ public class GameOverPanel extends JFrame {
         panel.add(this.FinalScore);
         panel.add(this.againButton);
         panel.add(this.quitButton);
-
         this.add(panel);
 
     }
