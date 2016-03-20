@@ -200,7 +200,8 @@ public class CollisionPanel extends JPanel implements ActionListener, KeyListene
     public void SpiderMovement(){
         Random r = new Random();
         int SpiderShake =10;
-        //Added Symbolic Constant for the Spider's shakey movement  - Suzanne Spigelmyer
+        //Added Symbolic Constant for the Spider's shakey movement
+        //Suzanne Spigelmyer
         for(int i = 0; i<spiders.size();i++){
             spiders.get(i).x+=r.nextInt(SpiderShake);
             repaint();

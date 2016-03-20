@@ -29,6 +29,10 @@ public class Spider extends Rectangle {
     public ImageIcon spiderImage;
     public  int spiderImageSize;
     public Image ResizedSpiderImage;
+    
+    //Eliminated "magic numbers" for random spider placement- Suzanne Spigelmyer
+    public int SpiderRandomPlacementX = 750;
+    public int SpiderRandomPlacementY = 550;
 
     public Spider(int width, int height){
        spiderImage = new ImageIcon("src/images/spiders.gif");
@@ -46,8 +50,8 @@ public class Spider extends Rectangle {
     public void SpiderLocation(){
         Random r = new Random();
         int m = 0;
-        SpiderLocx = r.nextInt(750);
-        SpiderLocy = r.nextInt(550); 
+        SpiderLocx = r.nextInt(SpiderRandomPlacementY);  //Now labeled as the Spider's placement -Suzanne
+        SpiderLocy = r.nextInt(SpiderRandomPlacementX); 
     }
 }
 
