@@ -36,7 +36,9 @@ public class CollisionPanel extends JPanel implements ActionListener, KeyListene
     public Obstacles chair;
     public Obstacles spiderweb;
     public Obstacles books;
-    
+    //Replaced magic number with constant
+    //Refactored by Levi Potutschnig
+    int growSpiderAfter = 33;
     public CollisionPanel(){
         BorderLayout b1= new BorderLayout();
         addKeyListener(this);
@@ -158,7 +160,7 @@ public class CollisionPanel extends JPanel implements ActionListener, KeyListene
         if (code == KeyEvent.VK_UP){
             up();
             movementCounter++;
-            if ((movementCounter%33)==0){
+            if ((movementCounter%growSpiderAfter)==0){
                 spiders.add(new Spider(spiderSize,spiderSize));
             }
         }
@@ -166,7 +168,7 @@ public class CollisionPanel extends JPanel implements ActionListener, KeyListene
         if (code == KeyEvent.VK_DOWN){
             down();
             movementCounter++;
-            if ((movementCounter%33)==0){
+            if ((movementCounter%growSpiderAfter)==0){
                 spiders.add(new Spider(spiderSize,spiderSize));
             }
         }
@@ -175,7 +177,7 @@ public class CollisionPanel extends JPanel implements ActionListener, KeyListene
             player.RightOrient();
             right();
             movementCounter++;
-            if ((movementCounter%33)==0){
+            if ((movementCounter%growSpiderAfter)==0){
                 spiders.add(new Spider(spiderSize,spiderSize));
             }
         }
@@ -184,7 +186,7 @@ public class CollisionPanel extends JPanel implements ActionListener, KeyListene
             player.Invert();
             left();
             movementCounter++;
-            if ((movementCounter%33)==0){
+            if ((movementCounter%growSpiderAfter)==0){
                 spiders.add(new Spider(spiderSize,spiderSize));
             }
         }
