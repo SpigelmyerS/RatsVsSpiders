@@ -44,18 +44,20 @@ public class CollisionPanel extends JPanel implements ActionListener, KeyListene
         addKeyListener(this);
         setFocusable(true);
         setFocusTraversalKeysEnabled(false); 
-       
+    //Replaced magic number with constant obstacleDimension
+    //Refactored by Matt Ford
         spiders = new ArrayList();
         player = new Rat(70, 70);
         score = new JTextArea("Hit arrow keys to start and try to hit the spiders! But be careful, the large ones will eat you!");
         Gameset = new JTextArea("");
         add(score).setLocation(0,0);
-        ball = new Obstacles(50, 50);
-        yoyo = new Obstacles(50, 50);
-        pencil = new Obstacles(50, 50);
-        chair = new Obstacles(50, 50);
-        spiderweb = new Obstacles(50, 50);
-        books = new Obstacles(50, 50);
+        final int obstacleDimension=50;
+        ball = new Obstacles(obstacleDimension, obstacleDimension);
+        yoyo = new Obstacles(obstacleDimension, obstacleDimension);
+        pencil = new Obstacles(obstacleDimension, obstacleDimension);
+        chair = new Obstacles(obstacleDimension, obstacleDimension);
+        spiderweb = new Obstacles(obstacleDimension, obstacleDimension);
+        books = new Obstacles(obstacleDimension, obstacleDimension);
     }
    
     public void paintComponent(Graphics g){
